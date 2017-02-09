@@ -10,6 +10,16 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>vehicles_mgt</artifactId>
+    <name>vehicles_mgt</name>
+    <version>${vehicles.version}</version>
+    <packaging>war</packaging>
 
+    <dependencies>
+        <dependency>
+            <groupId>com.cooltee</groupId>
+            <artifactId>vehicles_service</artifactId>
+            <version>${vehicles.version}</version>
+        </dependency>
+    </dependencies>
 
 </project>

@@ -10,6 +10,16 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>vehicles_service</artifactId>
+    <name>vehicles_service</name>
+    <version>${vehicles.version}</version>
+    <packaging>jar</packaging>
 
+    <dependencies>
+        <dependency>
+            <groupId>com.cooltee</groupId>
+            <artifactId>vehicles_dao</artifactId>
+            <version>${vehicles.version}</version>
+        </dependency>
+    </dependencies>
 
 </project>
