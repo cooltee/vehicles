@@ -6,6 +6,9 @@
 .idea/
 *.iml
 
+# Maven output
+/target/
+
 ## File-based project format:
 *.iws
 
