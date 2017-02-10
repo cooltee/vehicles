@@ -8,22 +8,22 @@
         <version>HEAD-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-
-    <artifactId>vehicles_mgt</artifactId>
-    <name>vehicles_mgt</name>
-    <version>${vehicles.version}</version>
+    <artifactId>vehicles_web</artifactId>
     <packaging>war</packaging>
-
+    <name>vehicles_web Maven Webapp</name>
+    <url>http://maven.apache.org</url>
     <dependencies>
         <dependency>
             <groupId>com.cooltee</groupId>
-            <artifactId>vehicles_service</artifactId>
+            <artifactId>vehicles_mgt</artifactId>
             <version>${vehicles.version}</version>
         </dependency>
         <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-webmvc</artifactId>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
         </dependency>
     </dependencies>
-
+    <build>
+        <finalName>vehicles_web</finalName>
+    </build>
 </project>
