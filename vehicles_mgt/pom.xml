@@ -12,7 +12,7 @@
     <artifactId>vehicles_mgt</artifactId>
     <name>vehicles_mgt</name>
     <version>${vehicles.version}</version>
-    <packaging>war</packaging>
+    <packaging>jar</packaging>
 
     <dependencies>
         <dependency>
