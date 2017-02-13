@@ -1,11 +1,9 @@
 package com.cooltee.dao.entity;
 
 import com.cooltee.dao.orm.BaseEntity;
+import org.hibernate.annotations.Cache;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 /**
  * TODO add distributions about this class
@@ -17,8 +15,10 @@ public class User extends BaseEntity {
 
     @Id
     @GeneratedValue
+    @Column(name = "id")
     private Long id;
 
+    @Column(name = "name")
     private String name;
 
     public void setName(String name) {
