@@ -16,27 +16,41 @@
         <!-- c3p0连接池的私有属性 -->
         <property name="maxPoolSize" value="30"/>
         <property name="minPoolSize" value="10"/>
-        <!-- 关闭连接后不自动commit -->
-        <property name="autoCommitOnClose" value="false"/>
+        <!-- 关闭连接后不自动commit
+        <property name="autoCommitOnClose" value="false"/>-->
     </bean>
 
     <bean id="sessionFactory" class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
         <property name="dataSource" ref="dataSource"/>
         <!-- 扫描DAO -->
-        <property name="packagesToScan" value="com.cooltee.dao"/>
-        <property name="hibernateProperties">
+        <property name="packagesToScan" value="com.cooltee.dao.entity"/>
+
+        <property name="configLocation" value="classpath:hibernate.cfg.xml"/>
+        <!--<property name="hibernateProperties">
             <props>
-                <!-- sql方言 -->
+                 sql方言
                 <prop key="hibernate.dialect">org.hibernate.dialect.MySQL5InnoDBDialect</prop>
-                <!-- 自动建表 -->
+                <!- 自动建表
                 <prop key="hibernate.hbm2ddl.auto">update</prop>
                 <prop key="hibernate.format_sql">true</prop>
                 <prop key="hibernate.show_sql">true</prop>
             </props>
-        </property>
+        </property>-->
+    </bean>
+
+    <!-- 配置hibernate操作模板类 -->
+    <bean name="hibernateTemplate" class="org.springframework.orm.hibernate5.HibernateTemplate">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+
+    <!-- 注入数据库连接池 -->
+    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <!-- 注入数据库连接池 -->
+        <property name="dataSource" ref="dataSource"/>
     </bean>
 
     <context:component-scan base-package="com.cooltee.dao.impl"/>
     <context:component-scan base-package="com.cooltee.dao.entity"/>
+
 
 </beans>
