@@ -1,5 +1,6 @@
 package com.cooltee.dao.orm;
 
+import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
@@ -7,15 +8,9 @@ import javax.persistence.Id;
  * All entity should extends The BaseEntity
  * Created by Daniel on 2017/2/12.
  */
-public class BaseEntity {
+public abstract class BaseEntity {
 
-    private Long id;
+    protected abstract void setId(Long id);
 
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public Long getId() {
-        return id;
-    }
+    protected abstract Long getId();
 }

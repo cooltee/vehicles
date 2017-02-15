@@ -21,6 +21,16 @@ public class User extends BaseEntity {
     @Column(name = "name")
     private String name;
 
+    @Override
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    @Override
+    public Long getId() {
+        return id;
+    }
+
     public void setName(String name) {
         this.name = name;
     }
@@ -28,4 +38,5 @@ public class User extends BaseEntity {
     public String getName() {
         return name;
     }
+
 }

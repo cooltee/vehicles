@@ -37,7 +37,7 @@ public class BaseDaoImpl<T extends BaseEntity> extends DaoSupport implements Bas
 
     @Override
     public T findById(Long id) {
-        return getHibernateTemplate().load(type, id);
+        return getHibernateTemplate().get(type, id);
     }
 
     @Override
