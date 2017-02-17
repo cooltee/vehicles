@@ -10,4 +10,5 @@ import org.springframework.test.context.junit4.AbstractJUnit4SpringContextTests;
  */
 @ContextConfiguration(locations = {"classpath:/spring/spring-*.xml"})
 public abstract class NoTransSpringTestSupport extends AbstractJUnit4SpringContextTests {
+
 }

@@ -1,7 +1,11 @@
 package com.cooltee.service.impl;
 
+import com.cooltee.service.interfaces.UserService;
 import com.cooltee.test.TransSpringTestSupport;
+import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataAccessException;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import static org.junit.Assert.*;
@@ -13,5 +17,12 @@ import static org.junit.Assert.*;
 @RunWith(SpringJUnit4ClassRunner.class)
 public class UserServiceImplTest extends TransSpringTestSupport{
 
+    @Autowired
+    private UserService userService;
 
+    @Test
+    public void testGetUserName()  {
+        String result = userService.getUserName(1L);
+        assertEquals("zhangsan", result);
+    }
 }

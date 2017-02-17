@@ -5,4 +5,7 @@ package com.cooltee.service.interfaces;
  * Created by Daniel on 2017/2/11.
  */
 public interface UserService {
+
+    String getUserName(Long id);
+
 }

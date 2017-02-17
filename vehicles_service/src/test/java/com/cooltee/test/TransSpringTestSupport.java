@@ -8,6 +8,6 @@ import org.springframework.test.context.junit4.AbstractTransactionalJUnit4Spring
  * Note: No Transactional Test should extends this.
  * Created by Daniel on 2017/2/14.
  */
-@ContextConfiguration(locations = {"classpath:/spring/spring-*.xml"})
+@ContextConfiguration(locations = {"classpath*:/spring/spring-*.xml"})
 public abstract class TransSpringTestSupport extends AbstractTransactionalJUnit4SpringContextTests {
 }
