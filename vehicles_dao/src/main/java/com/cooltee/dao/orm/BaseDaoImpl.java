@@ -10,7 +10,7 @@ import java.lang.reflect.ParameterizedType;
 import java.util.List;
 
 /**
- * TODO add distributions about this class
+ * base CURD functions implements
  * Created by Daniel on 2017/2/12.
  */
 public class BaseDaoImpl<T extends BaseEntity> extends DaoSupport implements BaseDao<T> {
@@ -56,7 +56,7 @@ public class BaseDaoImpl<T extends BaseEntity> extends DaoSupport implements Bas
         this.hibernateTemplate = hibernateTemplate;
     }
 
-    public HibernateTemplate getHibernateTemplate() {
+    protected HibernateTemplate getHibernateTemplate() {
         return hibernateTemplate;
     }
 }

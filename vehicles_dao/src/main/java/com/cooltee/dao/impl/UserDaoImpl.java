@@ -8,11 +8,10 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 /**
- * TODO add distributions about this class
+ * dao of user
  * Created by Daniel on 2017/2/12.
  */
 @Repository
 public class UserDaoImpl extends BaseDaoImpl<User> implements UserDao {
-
 
 }

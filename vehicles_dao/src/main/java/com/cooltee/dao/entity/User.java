@@ -6,7 +6,7 @@ import org.hibernate.annotations.Cache;
 import javax.persistence.*;
 
 /**
- * TODO add distributions about this class
+ * entity of user
  * Created by Daniel on 2017/2/12.
  */
 @Entity
