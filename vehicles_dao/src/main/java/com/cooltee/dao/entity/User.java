@@ -7,7 +7,7 @@ import javax.persistence.*;
 import java.util.Date;
 
 /**
- * TODO add distributions about this class
+ * entity of user
  * Created by Daniel on 2017/2/12.
  */
 

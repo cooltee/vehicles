@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.util.List;
 
 /**
- * TODO add distributions about this class
+ * base CURD functions define interface
  * Created by Daniel on 2017/2/12.
  */
 public interface BaseDao<T extends BaseEntity> {

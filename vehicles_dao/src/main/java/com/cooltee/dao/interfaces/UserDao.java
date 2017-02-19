@@ -4,7 +4,7 @@ import com.cooltee.dao.entity.User;
 import com.cooltee.dao.orm.BaseDao;
 
 /**
- * TODO add distributions about this class
+ * dao functions of user define interface
  * Created by Daniel on 2017/2/12.
  */
 public interface UserDao extends BaseDao<User> {

@@ -11,7 +11,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import static org.junit.Assert.*;
 
 /**
- * TODO add distributions about this class
+ * test UserDao
  * Created by Daniel on 2017/2/17.
  */
 @RunWith(SpringJUnit4ClassRunner.class)
