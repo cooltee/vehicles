@@ -1,34 +1,32 @@
 package com.cooltee.dao.entity;
 
 import com.cooltee.dao.orm.BaseEntity;
+import com.sun.org.apache.xpath.internal.operations.String;
 import org.hibernate.annotations.Cache;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
-import java.util.Date;
+
 
 /**
- * entity of user
- * Created by Daniel on 2017/2/12.
+ * TODO add distributions about this class
+ * Created by alittleseven on 2017/2/19.
  */
 
 @Entity
-@Table(name = "veh_user")
-public class User extends BaseEntity {
+@Table(name ="veh_repair_record")
+public class RepairRecord extends BaseEntity{
 
     @Id
     @GeneratedValue
     @Column(name = "id")
     private Long id;
 
-    @Column(name = "name")
-    private String name;
+    @Column(name = "cost_id")
+    private int cost_id;
 
-    @Column(name = "password")
-    private String password;
-
-    @Column(name = "state")
-    private int state;
+    @Column(name = "description")
+    private String description;
 
     @Column(name = "create_time")
     private Timestamp create_time;
@@ -37,22 +35,30 @@ public class User extends BaseEntity {
     private Timestamp update_time;
 
     @Override
-    public void setId(Long id) { this.id = id; }
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     @Override
-    public Long getId() { return id; }
+    public Long getId() {
+        return id;
+    }
 
-    public void setName(String name) { this.name = name; }
+    public void setCost_id(int cost_id) {
+        this.cost_id = cost_id;
+    }
 
-    public String getName() { return name; }
+    public int getCost_id() {
+        return cost_id;
+    }
 
-    public void setPassword(String password) { this.password = password; }
+    public void setDescription(String description) {
+        this.description = description;
+    }
 
-    public String getPassword() { return password; }
-
-    public void setState(int state) { this.state = state; }
-
-    public int getState() { return state; }
+    public String getDescription() {
+        return description;
+    }
 
     public void setCreate_time(Timestamp create_time) {
         this.create_time = create_time;
