@@ -11,4 +11,5 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 public class UserGroupRelaDaoImpl extends BaseDaoImpl<UserGroupRela> implements UserGroupRelaDao {
+
 }
