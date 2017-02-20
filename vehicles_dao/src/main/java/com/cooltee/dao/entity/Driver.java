@@ -24,6 +24,7 @@ public class Driver extends BaseEntity{
     @Column(name = "id")
     private Long id;
 
+
     @Column(name = "name")
     private String name;
 
