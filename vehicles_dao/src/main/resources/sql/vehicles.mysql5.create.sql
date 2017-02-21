@@ -8,7 +8,7 @@ create table veh_user
    create_time          timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP comment '创建时间',
    update_time          timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP comment '更新时间',
    primary key (id)
-);
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 alter table veh_user comment '用户表';
 
@@ -21,7 +21,7 @@ create table veh_group
    create_time          timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP comment '创建时间',
    update_time          timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP comment '更新时间',
    primary key (id)
-);
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 alter table veh_group comment '用户组表';
 
@@ -33,7 +33,7 @@ create table veh_permission
    create_time          timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP comment '创建时间',
    update_time          timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP comment '更新时间',
    primary key (id)
-);
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 create table veh_vehicle
 (
@@ -50,7 +50,7 @@ create table veh_vehicle
    create_time          timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP comment '创建时间',
    update_time          timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP comment '更新时间',
    primary key (id)
-);
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 alter table veh_vehicle comment '车辆信息表';
 
@@ -67,7 +67,7 @@ create table veh_driver
    create_time          timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP comment '创建时间',
    update_time          timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP comment '更新时间',
    primary key (id)
-);
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 alter table veh_driver comment '驾驶员信息表';
 
@@ -80,7 +80,7 @@ create table veh_drive_record
    create_time          timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP comment '创建时间',
    update_time          timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP comment '更新时间',
    primary key (id)
-);
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 alter table veh_drive_record comment '出行记录表';
 
@@ -100,7 +100,7 @@ create table veh_cost
    create_time          timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP comment '创建时间',
    update_time          timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP comment '更新时间',
    primary key (id)
-);
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 alter table veh_cost comment '费用汇总表';
 
@@ -115,7 +115,7 @@ create table veh_other_record
    create_time          timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP comment '创建时间',
    update_time          timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP comment '更新时间',
    primary key (id)
-);
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 alter table veh_other_record comment '其他费用记录表';
 
@@ -132,7 +132,7 @@ create table veh_oil_record
    create_time          timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP comment '创建时间',
    update_time          timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP comment '更新时间',
    primary key (id)
-);
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 alter table veh_oil_record comment '燃油记录表';
 
@@ -147,7 +147,7 @@ create table veh_repair_record
    create_time          timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP comment '创建时间',
    update_time          timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP comment '更新时间',
    primary key (id)
-);
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 alter table veh_repair_record comment '维修记录表';
 
