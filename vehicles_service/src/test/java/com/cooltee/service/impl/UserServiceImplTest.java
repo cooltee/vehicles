@@ -23,7 +23,7 @@ public class UserServiceImplTest extends TransSpringTestSupport{
     private UserService userService;
 
     @Test
-    public void testGetUserName()  {
+    public void testGetUserInfo()  {
         Map<String, String> result = userService.getUsers();
         assertNotNull(result);
         System.out.print(result.size());

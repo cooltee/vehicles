@@ -8,6 +8,6 @@ import java.util.Map;
  */
 public interface UserService {
 
-    Map<String, String> getUsers();
+    Map<String, String> getUserInfo();
 
 }

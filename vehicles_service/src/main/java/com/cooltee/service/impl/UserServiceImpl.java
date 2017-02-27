@@ -25,7 +25,7 @@ public class UserServiceImpl implements UserService {
     private UserDao userDao;
 
     @Override
-    public Map<String, String> getUsers() {
+    public Map<String, String> getUserInfo() {
         List<User> users = userDao.findAll();
         logger.debug("users list is " + users);
         Map<String, String> userMap = new HashMap<>();
