@@ -8,6 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import java.util.Map;
+
 import static org.junit.Assert.*;
 
 /**
@@ -22,7 +24,8 @@ public class UserServiceImplTest extends TransSpringTestSupport{
 
     @Test
     public void testGetUserName()  {
-        String result = userService.getUserName(1L);
-        assertEquals("zhangsan", result);
+        Map<String, String> result = userService.getUsers();
+        assertNotNull(result);
+        System.out.print(result.size());
     }
 }
