@@ -1,6 +1,7 @@
 package com.cooltee.dao.entity;
 
 import com.cooltee.dao.orm.BaseEntity;
+import com.sun.beans.editors.LongEditor;
 import com.sun.org.apache.xpath.internal.operations.String;
 import org.hibernate.annotations.Cache;
 
@@ -23,7 +24,7 @@ public class RepairRecord extends BaseEntity{
     private Long id;
 
     @Column(name = "cost_id")
-    private int cost_id;
+    private Long cost_id;
 
     @Column(name = "description")
     private String description;
@@ -44,11 +45,11 @@ public class RepairRecord extends BaseEntity{
         return id;
     }
 
-    public void setCost_id(int cost_id) {
+    public void setCost_id(Long cost_id) {
         this.cost_id = cost_id;
     }
 
-    public int getCost_id() {
+    public Long getCost_id() {
         return cost_id;
     }
 
