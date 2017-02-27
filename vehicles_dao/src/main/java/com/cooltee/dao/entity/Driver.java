@@ -1,7 +1,6 @@
 package com.cooltee.dao.entity;
 
 import com.cooltee.dao.orm.BaseEntity;
-import com.sun.org.apache.xpath.internal.operations.String;
 import org.hibernate.annotations.Cache;
 
 import javax.persistence.*;
