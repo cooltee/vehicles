@@ -1,5 +1,8 @@
 package com.cooltee.mgt.controller;
 
+import com.cooltee.dao.entity.User;
+import com.cooltee.service.interfaces.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -15,15 +18,17 @@ import java.util.Map;
 @RequestMapping("/json")
 public class MainJsonController {
 
+    @Autowired
+    private UserService userService;
+
     /**
      * the json data required
      * @return result
      */
-    @RequestMapping("/spring")
+    @RequestMapping("/user")
     @ResponseBody
     public Map<String, String> json(){
-        Map<String, String> resuct = new HashMap<>();
-        resuct.put("hello", "world");
-        return resuct;
+        Map<String, String> result = userService.getUserInfo();
+        return result;
     }
 }

@@ -17,7 +17,7 @@ import java.util.Map;
 @RequestMapping("/page")
 public class MainPageController {
 
-    //@Autowired
+    @Autowired
     private UserService userService;
 
     /**
