@@ -2,6 +2,7 @@ package com.cooltee.dao.impl;
 
 import com.cooltee.dao.entity.OilRecord;
 import com.cooltee.dao.interfaces.OilRecordDao;
+import com.cooltee.test.TransSpringTestSupport;
 import org.junit.*;
 import org.junit.runner.RunWith;
 import org.junit.runners.MethodSorters;
@@ -17,7 +18,7 @@ import java.util.List;
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 @RunWith(SpringJUnit4ClassRunner.class)
 @Transactional
-public class OilRecordDaoImplTest {
+public class OilRecordDaoImplTest extends TransSpringTestSupport {
 
     @Autowired
     private OilRecordDao oilRecordDao;

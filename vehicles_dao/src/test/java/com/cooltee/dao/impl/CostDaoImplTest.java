@@ -2,6 +2,7 @@ package com.cooltee.dao.impl;
 
 import com.cooltee.dao.entity.Cost;
 import com.cooltee.dao.interfaces.CostDao;
+import com.cooltee.test.TransSpringTestSupport;
 import org.junit.*;
 import org.junit.runner.RunWith;
 import org.junit.runners.MethodSorters;
@@ -17,7 +18,7 @@ import java.util.List;
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 @RunWith(SpringJUnit4ClassRunner.class)
 @Transactional
-public class CostDaoImplTest {
+public class CostDaoImplTest extends TransSpringTestSupport {
 
     @Autowired
     private CostDao costDao;
@@ -31,7 +32,7 @@ public class CostDaoImplTest {
     }
 
     @Test
-    public void testSave() throws Exception{
+    public void testASave() throws Exception{
         Long id = costDao.save(cost);
         cost.setId(id);
         Assert.assertSame(cost,costDao.findById(id));

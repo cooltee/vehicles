@@ -3,6 +3,7 @@ package com.cooltee.dao.impl;
 
 import com.cooltee.dao.entity.RepairRecord;
 import com.cooltee.dao.interfaces.RepairRecordDao;
+import com.cooltee.test.TransSpringTestSupport;
 import org.junit.*;
 
 import org.junit.runner.RunWith;
@@ -20,7 +21,7 @@ import java.util.List;
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 @RunWith(SpringJUnit4ClassRunner.class)
 @Transactional
-public class RepairRecordDaoImplTest {
+public class RepairRecordDaoImplTest extends TransSpringTestSupport {
 
     @Autowired
     private RepairRecordDao repairRecordDao;

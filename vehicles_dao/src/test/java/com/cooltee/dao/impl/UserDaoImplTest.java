@@ -2,18 +2,14 @@ package com.cooltee.dao.impl;
 
 import com.cooltee.dao.entity.User;
 import com.cooltee.dao.interfaces.UserDao;
-import com.cooltee.test.NoTransSpringTestSupport;
 import com.cooltee.test.TransSpringTestSupport;
-import org.hibernate.FlushMode;
 import org.junit.*;
 import org.junit.runner.RunWith;
 import org.junit.runners.MethodSorters;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.transaction.event.TransactionalEventListener;
 
-import javax.persistence.FlushModeType;
 import java.util.List;
 
 /**

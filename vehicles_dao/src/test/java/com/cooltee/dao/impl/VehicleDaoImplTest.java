@@ -2,6 +2,7 @@ package com.cooltee.dao.impl;
 
 import com.cooltee.dao.entity.Vehicle;
 import com.cooltee.dao.interfaces.VehicleDao;
+import com.cooltee.test.TransSpringTestSupport;
 import org.junit.*;
 import org.junit.runner.RunWith;
 import org.junit.runners.MethodSorters;
@@ -16,7 +17,7 @@ import java.util.List;
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 @RunWith(SpringJUnit4ClassRunner.class)
 @Transactional
-public class VehicleDaoImplTest  {
+public class VehicleDaoImplTest extends TransSpringTestSupport {
 
     @Autowired
     private VehicleDao vehicleDao;
@@ -30,7 +31,7 @@ public class VehicleDaoImplTest  {
     }
 
     @Test
-    public void testSave() throws Exception{
+    public void testASave() throws Exception{
         Long id = vehicleDao.save(vehicle);
         vehicle.setId(id);
         Assert.assertSame(vehicle,vehicleDao.findById(id));

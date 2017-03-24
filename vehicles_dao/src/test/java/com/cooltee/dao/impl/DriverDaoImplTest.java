@@ -2,6 +2,7 @@ package com.cooltee.dao.impl;
 
 import com.cooltee.dao.entity.Driver;
 import com.cooltee.dao.interfaces.DriverDao;
+import com.cooltee.test.TransSpringTestSupport;
 import org.junit.*;
 import org.junit.runner.RunWith;
 import org.junit.runners.MethodSorters;
@@ -17,7 +18,7 @@ import java.util.List;
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 @RunWith(SpringJUnit4ClassRunner.class)
 @Transactional
-public class DriverDaoImplTest {
+public class DriverDaoImplTest extends TransSpringTestSupport {
 
     @Autowired
     private DriverDao driverDao;
@@ -30,7 +31,7 @@ public class DriverDaoImplTest {
     }
 
     @Test
-    public void testSave() throws Exception{
+    public void testASave() throws Exception{
         Long id = driverDao.save(driver);
         driver.setId(id);
         Assert.assertSame(driver,driverDao.findById(id));
@@ -57,7 +58,8 @@ public class DriverDaoImplTest {
         Assert.assertNotNull(drivers);
     }
 
-    public void testDelete() throws Exception{
+    @Test
+    public void testZDelete() throws Exception{
         driverDao.delete(driver);
         Assert.assertNull(driverDao.findById(driver.getId()));
     }

@@ -2,6 +2,7 @@ package com.cooltee.dao.impl;
 
 import com.cooltee.dao.entity.Permission;
 import com.cooltee.dao.interfaces.PermissionDao;
+import com.cooltee.test.TransSpringTestSupport;
 import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Ignore;
@@ -13,7 +14,7 @@ import java.util.List;
 /**
  * Created by alittleseven on 2017/2/24.
  */
-public class PermissionDaoImplTest {
+public class PermissionDaoImplTest extends TransSpringTestSupport {
     @Autowired
     private PermissionDao permissionDao;
     private static Permission permission;

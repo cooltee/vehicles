@@ -2,6 +2,7 @@ package com.cooltee.dao.impl;
 
 import com.cooltee.dao.entity.UserGroupRela;
 import com.cooltee.dao.interfaces.UserGroupRelaDao;
+import com.cooltee.test.TransSpringTestSupport;
 import org.junit.*;
 import org.junit.runner.RunWith;
 import org.junit.runners.MethodSorters;
@@ -17,7 +18,7 @@ import java.util.List;
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 @RunWith(SpringJUnit4ClassRunner.class)
 @Transactional
-public class UserGroupRelaDaoImplTest {
+public class UserGroupRelaDaoImplTest extends TransSpringTestSupport {
 
     @Autowired
     private UserGroupRelaDao userGroupRelaDao;
@@ -56,6 +57,6 @@ public class UserGroupRelaDaoImplTest {
     @Test
     public void testFindAll() throws Exception{
         List<UserGroupRela> userGroupRelas = userGroupRelaDao.findAll();
-        Assert.assertNull(userGroupRelaDao.findById(userGroupRela.getId()));
+        Assert.assertNotNull(userGroupRelas);
     }
 }
