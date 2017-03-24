@@ -3,5 +3,5 @@
 <!-- inclued taglib -->
 
 <!-- include js files -->
-<script type="text/javascript" src="${CONTEXT_PATH}/statics/js/jquery-3.1.1.js"></script>
+<script type="text/javascript" src="${CONTEXT_PATH}/statics/jquery/jquery-3.1.1.js"></script>
 <!-- include css files -->
