@@ -14,3 +14,6 @@
 <link rel="stylesheet" href="statics/bootstrap/css/bootstrap.min.css">
 <!-- font-awesome -->
 <link rel="stylesheet" href="statics/font-awesome/css/font-awesome.min.css">
+
+<!-- Favicon -->
+<link rel="shortcut icon" href="assets/icon/favicon.ico">

@@ -1,10 +1,4 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: Daniel
-  Date: 2017/5/3
-  Time: 20:38
-  To change this template use File | Settings | File Templates.
---%>
+<%-- Created by Daniel on 2017/5/3 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <%@include file="WEB-INF/jsp/commons/include.jsp"%>
@@ -16,7 +10,6 @@
     <title>login - Vehicles Management System</title>
 </head>
 <body>
-
     <div class="login-content">
         <div class="login-bg">
             <div class="container">
