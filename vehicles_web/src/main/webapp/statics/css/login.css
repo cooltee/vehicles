@@ -21,7 +21,7 @@
     padding: 100px 0 170px 0;
 }
 
-.login-box {
+.login-form {
     margin-top: 35px;
 }
 
@@ -73,7 +73,11 @@
 }
 
 .box-bottom form .input-error {
-    border-color: #4aaf51;
+    border-color: #f00;
+}
+
+.msg-error{
+    color: #f00;
 }
 
 .social-login {
