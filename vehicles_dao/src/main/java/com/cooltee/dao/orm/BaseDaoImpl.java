@@ -16,6 +16,7 @@ import java.util.List;
  */
 public abstract class BaseDaoImpl<T extends BaseEntity> extends DaoSupport implements BaseDao<T> {
 
+
     private HibernateTemplate hibernateTemplate;
 
     private Class<T> type = (Class<T>) ((ParameterizedType) getClass().getGenericSuperclass()).getActualTypeArguments()[0];
@@ -52,6 +53,7 @@ public abstract class BaseDaoImpl<T extends BaseEntity> extends DaoSupport imple
         }
     }
 
+    @Autowired
     public void setHibernateTemplate(HibernateTemplate hibernateTemplate) {
         this.hibernateTemplate = hibernateTemplate;
     }
