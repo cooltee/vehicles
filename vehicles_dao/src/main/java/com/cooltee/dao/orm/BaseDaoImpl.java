@@ -1,5 +1,6 @@
 package com.cooltee.dao.orm;
 
+import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.support.DaoSupport;
@@ -13,9 +14,8 @@ import java.util.List;
  * base CURD functions implements
  * Created by Daniel on 2017/2/12.
  */
-public class BaseDaoImpl<T extends BaseEntity> extends DaoSupport implements BaseDao<T> {
+public abstract class BaseDaoImpl<T extends BaseEntity> extends DaoSupport implements BaseDao<T> {
 
-    @Autowired
     private HibernateTemplate hibernateTemplate;
 
     private Class<T> type = (Class<T>) ((ParameterizedType) getClass().getGenericSuperclass()).getActualTypeArguments()[0];
@@ -58,5 +58,9 @@ public class BaseDaoImpl<T extends BaseEntity> extends DaoSupport implements Bas
 
     protected HibernateTemplate getHibernateTemplate() {
         return hibernateTemplate;
+    }
+
+    protected Session getSession(){
+        return hibernateTemplate.getSessionFactory().getCurrentSession();
     }
 }

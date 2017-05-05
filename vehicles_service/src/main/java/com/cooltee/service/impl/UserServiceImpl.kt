@@ -13,16 +13,18 @@ class UserServiceImpl(@Autowired private val userDao: UserDao) : UserService {
     }
 
     override fun login(username: String, password: String): String {
-        val user:User
-        // try {
+        var user: User?
+        try {
             val id = username.toLong()
             user = userDao.findById(id)
-        //} catch (e: Exception) {
-            //user = userDao.findByUsername(username)
-        //}
-        if(password == user.password){
+        } catch (e: Exception) {
+            user = userDao.findByUsername(username)
+        }
+
+        if(user != null && password == user.password){
             return "success"
         }
+
         return "fail"
     }
 }

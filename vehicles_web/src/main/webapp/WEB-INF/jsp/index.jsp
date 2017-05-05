@@ -6,6 +6,6 @@
     <title>Vehicles Management System</title>
 </head>
 <body>
-
+    <h1>Hello Vehicles</h1>
 </body>
 </html>
