@@ -18,6 +18,14 @@
             <artifactId>vehicles_mgt</artifactId>
             <version>${vehicles.version}</version>
         </dependency>
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.tomcat</groupId>
+            <artifactId>tomcat-servlet-api</artifactId>
+        </dependency>
     </dependencies>
     <build>
         <finalName>vehicles_web</finalName>
