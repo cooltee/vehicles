@@ -1,7 +1,10 @@
+drop table IF EXISTS veh_user;
+
 create table veh_user
 (
    id                   bigint(16) not null comment '主键id',
    name                 varchar(16) comment '姓名',
+   username             varchar(16) comment '用户名',
    password             varchar(16) comment '密码',
    comments             varchar(64) comment '备注',
    state                tinyint(1) comment '状态',
@@ -11,6 +14,8 @@ create table veh_user
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 alter table veh_user comment '用户表';
+
+insert into veh_user(id, name, username, password, comments, state) values(1001, '管理员', 'admin', '123456', 'admin', 1);
 
 create table veh_group
 (
