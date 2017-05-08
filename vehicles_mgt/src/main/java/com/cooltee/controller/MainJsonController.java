@@ -1,5 +1,6 @@
-package com.cooltee.mgt.controller;
+package com.cooltee.controller;
 
+import com.cooltee.dao.entity.User;
 import com.cooltee.service.interfaces.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -10,23 +11,24 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * the page Controller
- * Created by Daniel on 2017/2/11.
+ * The json Controller
+ * Created by Daniel on 2017/2/12.
  */
 @Controller
-@RequestMapping("/page")
-public class MainPageController {
+@RequestMapping("/json")
+public class MainJsonController {
 
     @Autowired
     private UserService userService;
 
     /**
-     * jsp page
-     * @return spring.jsp
+     * the json data required
+     * @return result
      */
-    @RequestMapping("/spring")
-    public String jsonPage(){
-        return "spring";
+    @RequestMapping("/user")
+    @ResponseBody
+    public Map<String, String> json(){
+        Map<String, String> result = userService.getUserInfo();
+        return result;
     }
-
 }

@@ -1,4 +1,4 @@
-package com.cooltee.mgt.controller
+package com.cooltee.controller
 
 import com.cooltee.service.interfaces.UserService
 import org.springframework.beans.factory.annotation.Autowired
