@@ -6,6 +6,15 @@
 
     <mvc:resources mapping="/statics/**" location="/statics/"> </mvc:resources>
 
+    <mvc:interceptors>
+        <mvc:interceptor>
+            <mvc:mapping path="/**"/>
+            <mvc:exclude-mapping path="/static/**"/>
+            <mvc:exclude-mapping path="/login"/>
+            <ref bean="signedInterceptor"/>
+        </mvc:interceptor>
+    </mvc:interceptors>
+
     <!-- 添加SpringMVC对multipart请求的支持 用于上传/下载文件 -->
     <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver"/>
 
