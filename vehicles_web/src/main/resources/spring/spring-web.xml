@@ -9,7 +9,7 @@
     <mvc:interceptors>
         <mvc:interceptor>
             <mvc:mapping path="/**"/>
-            <mvc:exclude-mapping path="/static/**"/>
+            <mvc:exclude-mapping path="/statics/**"/>
             <mvc:exclude-mapping path="/login"/>
             <ref bean="signedInterceptor"/>
         </mvc:interceptor>

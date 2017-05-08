@@ -9,6 +9,7 @@
     <context:component-scan base-package="com.cooltee.controller"/>
 
     <bean id="signedInterceptor" class="com.cooltee.interceptor.SignedInterceptor"/>
+
     <!-- SpringMVC注解模式 提供数据绑定，数字/日期格式化 -->
     <mvc:annotation-driven />
 
