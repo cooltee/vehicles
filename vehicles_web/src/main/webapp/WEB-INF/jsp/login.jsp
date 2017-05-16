@@ -1,7 +1,7 @@
 <%-- Created by Daniel on 2017/5/3 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
-<%@include file="commons/include.jsp"%>
+<%@include file="commons/includeStyle.jsp"%>
 <link rel="stylesheet" href="../../statics/css/login.css">
 <script type="text/javascript" src="../../statics/js/login.js"></script>
 <script type="text/javascript" src="../../statics/jquery/jquery.backstretch.min.js"></script>
