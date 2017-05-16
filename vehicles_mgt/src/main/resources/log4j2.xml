@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="off" monitorInterval="1800">
+
+    <properties>
+        <property name="LOG_HOME">logs</property>
+        <property name="FILE_NAME">Vehicles</property>
+    </properties>
+
+    <Appenders>
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} %-5level %class{36} %L %M - %msg%xEx%n"/>
+        </Console>
+    </Appenders>
+
+    <RollingRandomAccessFile name="Vehicles_sign"
+                             filename="${LOG_HOME}/sign/sign.log"
+                             filePattern="${LOG_HOME}/$${date:yyyy-MM}/${FILE_NAME}-%d{yyyy-MM-dd}-%i.log.gz">
+        <PatternLayout pattern="d{yyyy.MM.dd 'at' HH:mm:ss.SSS z} %-5level %class{36} %L %M - %msg%xEx%n"/>
+        <Policies>
+            <TimeBasedTriggeringPolicy/>
+            <SizeBasedTriggeringPolicy size="10 MB"/>
+        </Policies>
+        <DefaultRolloverStrategy max="20"/>
+    </RollingRandomAccessFile>
+
+    <Loggers>
+        <Logger name="com.cooltee.controller.LoginController" level="trace" additivity="true">
+            <AppenderRef ref="Vehicles_sign"/>
+        </Logger>
+
+        <Root>
+            <AppenderRef ref="Console"/>
+        </Root>
+    </Loggers>
+</Configuration>
