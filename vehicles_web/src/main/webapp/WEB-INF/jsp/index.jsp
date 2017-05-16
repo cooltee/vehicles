@@ -57,7 +57,7 @@
                                     <li><a href="#">Advanced Components</a></li>
                                     <li><a href="#">Form Validation</a></li>
                                     <li><a href="#">Form Wizard</a></li>
-                                    <li><a href="#">Form Upload</a></li>`
+                                    <li><a href="#">Form Upload</a></li>
                                     <li><a href="#">Form Buttons</a></li>
                                 </ul>
                             </li>

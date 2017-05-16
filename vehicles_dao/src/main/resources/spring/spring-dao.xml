@@ -53,7 +53,6 @@
     <tx:annotation-driven transaction-manager="transactionManager"/>
 
     <context:component-scan base-package="com.cooltee.dao.impl"/>
-    <context:component-scan base-package="com.cooltee.dao.entity"/>
 
 
 </beans>
