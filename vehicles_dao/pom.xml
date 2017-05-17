@@ -40,6 +40,12 @@
             <groupId>c3p0</groupId>
             <artifactId>c3p0</artifactId>
         </dependency>
+
+        <dependency>
+            <groupId>redis.clients</groupId>
+            <artifactId>jedis</artifactId>
+        </dependency>
+
     </dependencies>
 
 </project>
