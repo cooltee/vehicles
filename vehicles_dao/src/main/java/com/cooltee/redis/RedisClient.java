@@ -33,14 +33,6 @@ public class RedisClient {
     }
 
     /**
-     *  the jedisPool
-     */
-    public static JedisPool getJedisPool() {
-        return jedisPool;
-    }
-
-
-    /**
      *  Key序列化
      */
     private static byte[] keyRedisSerializer(String key) throws Exception {
@@ -115,16 +107,10 @@ public class RedisClient {
      */
     public static String set(String key, Object value) {
         String result = null;
-        Jedis jedis = jedisPool.getResource();
-        if (jedis == null) {
-            return null;
-        }
-        try {
+        try (Jedis jedis = jedisPool.getResource()) {
             result = jedis.set(keyRedisSerializer(key), valueRedisSerializer(value));
         } catch (Exception e) {
             log.error(e.getMessage(), e);
-        } finally {
-            jedis.close();
         }
         return result;
     }
@@ -133,20 +119,14 @@ public class RedisClient {
      *
      *  setex
      *  设置生存时间
-     *
+     * 
      */
     public static String setex(String key, int seconds, Object value) {
         String result = null;
-        Jedis jedis = jedisPool.getResource();
-        if (jedis == null) {
-            return null;
-        }
-        try {
+        try (Jedis jedis = jedisPool.getResource()) {
             result = jedis.setex(keyRedisSerializer(key), seconds, valueRedisSerializer(value));
         } catch (Exception e) {
             log.error(e.getMessage(), e);
-        } finally {
-            jedis.close();
         }
         return result;
     }
@@ -156,16 +136,10 @@ public class RedisClient {
      */
     public static Object get(String key) {
         Object result = null;
-        Jedis jedis = jedisPool.getResource();
-        if (jedis == null) {
-            return null;
-        }
-        try {
+        try (Jedis jedis = jedisPool.getResource()) {
             result = valueRedisDeserializer(jedis.get(keyRedisSerializer(key)));
         } catch (Exception e) {
             log.error(e.getMessage(), e);
-        } finally {
-            jedis.close();
         }
         return result;
     }
@@ -177,16 +151,10 @@ public class RedisClient {
      */
     public static Object getIncrAndDecrValue(String key) {
         Object result = null;
-        Jedis jedis = jedisPool.getResource();
-        if (jedis == null) {
-            return null;
-        }
-        try {
+        try (Jedis jedis = jedisPool.getResource()) {
             result = jedis.get(key);
         } catch (Exception e) {
             log.error(e.getMessage(), e);
-        } finally {
-            jedis.close();
         }
         return result;
     }
@@ -198,16 +166,11 @@ public class RedisClient {
      */
     public static Boolean exists(String key) {
         Boolean result = false;
-        Jedis jedis = jedisPool.getResource();
-        if (jedis == null) {
-            return false;
-        }
-        try {
+
+        try (Jedis jedis = jedisPool.getResource()) {
             result = jedis.exists(keyRedisSerializer(key));
         } catch (Exception e) {
             log.error(e.getMessage(), e);
-        } finally {
-            jedis.close();
         }
         return result;
     }
@@ -219,16 +182,10 @@ public class RedisClient {
      */
     public static Long expire(String key, int seconds) {
         Long result = null;
-        Jedis jedis = jedisPool.getResource();
-        if (jedis == null) {
-            return null;
-        }
-        try {
+        try (Jedis jedis = jedisPool.getResource()) {
             result = jedis.expire(keyRedisSerializer(key), seconds);
         } catch (Exception e) {
             log.error(e.getMessage(), e);
-        } finally {
-            jedis.close();
         }
         return result;
     }
@@ -240,16 +197,10 @@ public class RedisClient {
      */
     public static Long expireAt(String key, long unixTime) {
         Long result = null;
-        Jedis jedis = jedisPool.getResource();
-        if (jedis == null) {
-            return null;
-        }
-        try {
+        try (Jedis jedis = jedisPool.getResource()) {
             result = jedis.expireAt(keyRedisSerializer(key), unixTime);
         } catch (Exception e) {
             log.error(e.getMessage(), e);
-        } finally {
-            jedis.close();
         }
         return result;
     }
@@ -261,36 +212,24 @@ public class RedisClient {
      */
     public static Object getSet(String key, Object value) {
         Object result = null;
-        Jedis jedis = jedisPool.getResource();
-        if (jedis == null) {
-            return null;
-        }
-        try {
+        try (Jedis jedis = jedisPool.getResource()) {
             result = valueRedisDeserializer(jedis.getSet(keyRedisSerializer(key), valueRedisSerializer(value)));
         } catch (Exception e) {
             log.error(e.getMessage(), e);
-        } finally {
-            jedis.close();
         }
         return result;
     }
 
     /**
      *
-     *  对指定key进行自减操作，每次减少指定数值，对不存在的key，自动创建并减指定数值
+     *  对指定key进行自减操作，每次减少指定数值，对不存在的key，自动创建并减指定数值 
      */
     public static Long decrBy(String key, long integer) {
         Long result = null;
-        Jedis jedis = jedisPool.getResource();
-        if (jedis == null) {
-            return null;
-        }
-        try {
+        try (Jedis jedis = jedisPool.getResource()) {
             result = jedis.decrBy(keyRedisSerializer(key), integer);
         } catch (Exception e) {
             log.error(e.getMessage(), e);
-        } finally {
-            jedis.close();
         }
         return result;
     }
@@ -301,54 +240,36 @@ public class RedisClient {
      */
     public static Long decr(String key) {
         Long result = null;
-        Jedis jedis = jedisPool.getResource();
-        if (jedis == null) {
-            return null;
-        }
-        try {
+        try (Jedis jedis = jedisPool.getResource()) {
             result = jedis.decr(keyRedisSerializer(key));
         } catch (Exception e) {
             log.error(e.getMessage(), e);
-        } finally {
-            jedis.close();
         }
         return result;
     }
 
     /**
-     *  对指定key进行自增操作，每次增加指定数值，对不存在的key，自动创建并加指定数值
+     *  对指定key进行自增操作，每次增加指定数值，对不存在的key，自动创建并加指定数值 
      */
     public static Long incrBy(String key, long integer) {
         Long result = null;
-        Jedis jedis = jedisPool.getResource();
-        if (jedis == null) {
-            return null;
-        }
-        try {
+        try (Jedis jedis = jedisPool.getResource()) {
             result = jedis.incrBy(keyRedisSerializer(key), integer);
         } catch (Exception e) {
             log.error(e.getMessage(), e);
-        } finally {
-            jedis.close();
         }
         return result;
     }
 
     /**
-     *  对指定key进行自增操作，每次增加1，对不存在的key，自动创建并加1
+     *  对指定key进行自增操作，每次增加1，对不存在的key，自动创建并加1 
      */
     public static Long incr(String key) {
         Long result = null;
-        Jedis jedis = jedisPool.getResource();
-        if (jedis == null) {
-            return null;
-        }
-        try {
+        try (Jedis jedis = jedisPool.getResource()) {
             result = jedis.incr(keyRedisSerializer(key));
         } catch (Exception e) {
             log.error(e.getMessage(), e);
-        } finally {
-            jedis.close();
         }
         return result;
     }
@@ -358,16 +279,10 @@ public class RedisClient {
      */
     public static Long hset(String key, String field, Object value) {
         Long result = null;
-        Jedis jedis = jedisPool.getResource();
-        if (jedis == null) {
-            return null;
-        }
-        try {
+        try (Jedis jedis = jedisPool.getResource()) {
             result = jedis.hset(keyRedisSerializer(key), keyRedisSerializer(field), valueRedisSerializer(value));
         } catch (Exception e) {
             log.error(e.getMessage(), e);
-        } finally {
-            jedis.close();
         }
         return result;
     }
@@ -378,37 +293,25 @@ public class RedisClient {
      */
     public static Object hget(String key, String field) {
         Object result = null;
-        Jedis jedis = jedisPool.getResource();
-        if (jedis == null) {
-            return null;
-        }
-        try {
+        try (Jedis jedis = jedisPool.getResource()) {
             result = valueRedisDeserializer(jedis.hget(keyRedisSerializer(key), keyRedisSerializer(field)));
         } catch (Exception e) {
             log.error(e.getMessage(), e);
-        } finally {
-            jedis.close();
         }
         return result;
     }
 
     /**
      *
-     *  同时将多个 field-value (域-值)对设置到哈希表 key 中
-     *
+     *  同时将多个 field-value (域-值)对设置到哈希表 key 中 
+     * 
      */
     public static String hmset(String key, Map<String, Object> hash) {
         String result = null;
-        Jedis jedis = jedisPool.getResource();
-        if (jedis == null) {
-            return null;
-        }
-        try {
+        try (Jedis jedis = jedisPool.getResource()) {
             result = jedis.hmset(keyRedisSerializer(key), byteMapConvertFromObject(hash));
         } catch (Exception e) {
             log.error(e.getMessage(), e);
-        } finally {
-            jedis.close();
         }
         return result;
     }
@@ -418,11 +321,7 @@ public class RedisClient {
      */
     public static List<Object> hmget(String key, String... fields) {
         List<Object> result = null;
-        Jedis jedis = jedisPool.getResource();
-        if (jedis == null) {
-            return null;
-        }
-        try {
+        try (Jedis jedis = jedisPool.getResource()) {
             byte[][] bfields = new byte[fields.length][];
             for (int i = 0; i < bfields.length; i++) {
                 bfields[i] = keyRedisSerializer(fields[i]);
@@ -430,24 +329,16 @@ public class RedisClient {
             result = objectListConvertFromByte(jedis.hmget(keyRedisSerializer(key), bfields));
         } catch (Exception e) {
             log.error(e.getMessage(), e);
-        } finally {
-            jedis.close();
         }
         return result;
     }
 
     public static Long hincrBy(String key, String field, long value) {
         Long result = null;
-        Jedis jedis = jedisPool.getResource();
-        if (jedis == null) {
-            return null;
-        }
-        try {
+        try (Jedis jedis = jedisPool.getResource()) {
             result = jedis.hincrBy(keyRedisSerializer(key), keyRedisSerializer(field), value);
         } catch (Exception e) {
             log.error(e.getMessage(), e);
-        } finally {
-            jedis.close();
         }
         return result;
     }
@@ -457,16 +348,10 @@ public class RedisClient {
      */
     public static Long del(String key) {
         Long result = null;
-        Jedis jedis = jedisPool.getResource();
-        if (jedis == null) {
-            return null;
-        }
-        try {
+        try (Jedis jedis = jedisPool.getResource()) {
             result = jedis.del(keyRedisSerializer(key));
         } catch (Exception e) {
             log.error(e.getMessage(), e);
-        } finally {
-            jedis.close();
         }
         return result;
     }
@@ -476,12 +361,9 @@ public class RedisClient {
      */
     public static Long delByPrefix(String pre_str) {
         Long result = 0L;
-        Jedis jedis = jedisPool.getResource();
-        if (jedis == null) {
-            return result;
-        }
+
         StringBuilder keys = new StringBuilder();
-        try {
+        try (Jedis jedis = jedisPool.getResource()) {
             Set<String> set = jedis.keys(pre_str + "*");
             for (String keyStr : set) {
                 result = result + del(keyStr);
@@ -490,8 +372,6 @@ public class RedisClient {
             log.info("delByPrefix keys is " + keys);
         } catch (Exception e) {
             log.error(e.getMessage(), e);
-        } finally {
-            jedis.close();
         }
         return result;
     }
@@ -501,35 +381,23 @@ public class RedisClient {
      */
     public static Long hdel(String key, String field) {
         Long result = null;
-        Jedis jedis = jedisPool.getResource();
-        if (jedis == null) {
-            return null;
-        }
-        try {
+        try (Jedis jedis = jedisPool.getResource()) {
             result = jedis.hdel(keyRedisSerializer(key), keyRedisSerializer(field));
         } catch (Exception e) {
             log.error(e.getMessage(), e);
-        } finally {
-            jedis.close();
         }
         return result;
     }
 
     /**
-     *  返回哈希表 key 中所有域的值
+     *  返回哈希表 key 中所有域的值 
      */
     public static List<Object> hvals(String key) {
         List<Object> result = null;
-        Jedis jedis = jedisPool.getResource();
-        if (jedis == null) {
-            return null;
-        }
-        try {
+        try (Jedis jedis = jedisPool.getResource()) {
             result = objectListConvertFromByte(jedis.hvals(keyRedisSerializer(key)));
         } catch (Exception e) {
             log.error(e.getMessage(), e);
-        } finally {
-            jedis.close();
         }
         return result;
     }
@@ -539,35 +407,23 @@ public class RedisClient {
      */
     public static Map<String, Object> hgetAll(String key) {
         Map<String, Object> result = null;
-        Jedis jedis = jedisPool.getResource();
-        if (jedis == null) {
-            return null;
-        }
-        try {
+        try (Jedis jedis = jedisPool.getResource()) {
             result = objectMapConvertFromByte(jedis.hgetAll(keyRedisSerializer(key)));
         } catch (Exception e) {
             log.error(e.getMessage(), e);
-        } finally {
-            jedis.close();
         }
         return result;
     }
 
     /**
-     *  将一个或多个值 value 插入到列表 key 的表尾(最右边)
+     *  将一个或多个值 value 插入到列表 key 的表尾(最右边) 
      */
     public static Long rpush(String key, Object value) {
         Long result = null;
-        Jedis jedis = jedisPool.getResource();
-        if (jedis == null) {
-            return null;
-        }
-        try {
+        try (Jedis jedis = jedisPool.getResource()) {
             result = jedis.rpush(keyRedisSerializer(key), valueRedisSerializer(value));
         } catch (Exception e) {
             log.error(e.getMessage(), e);
-        } finally {
-            jedis.close();
         }
         return result;
     }
@@ -577,51 +433,33 @@ public class RedisClient {
      */
     public static Long lpush(String key, Object value) {
         Long result = null;
-        Jedis jedis = jedisPool.getResource();
-        if (jedis == null) {
-            return null;
-        }
-        try {
+        try (Jedis jedis = jedisPool.getResource()) {
             result = jedis.lpush(keyRedisSerializer(key), valueRedisSerializer(value));
         } catch (Exception e) {
             log.error(e.getMessage(), e);
-        } finally {
-            jedis.close();
         }
         return result;
     }
 
     public static Long llen(String key) {
         Long result = null;
-        Jedis jedis = jedisPool.getResource();
-        if (jedis == null) {
-            return null;
-        }
-        try {
+        try (Jedis jedis = jedisPool.getResource()) {
             result = jedis.llen(keyRedisSerializer(key));
         } catch (Exception e) {
             log.error(e.getMessage(), e);
-        } finally {
-            jedis.close();
         }
         return result;
     }
 
     /**
-     *  将一个或多个 member 元素加入到集合 key 当中，已经存在于集合的 member 元素将被忽略
+     *  将一个或多个 member 元素加入到集合 key 当中，已经存在于集合的 member 元素将被忽略 
      */
     public static Long sadd(String key, Object value) {
         Long result = null;
-        Jedis jedis = jedisPool.getResource();
-        if (jedis == null) {
-            return null;
-        }
-        try {
+        try (Jedis jedis = jedisPool.getResource()) {
             result = jedis.sadd(keyRedisSerializer(key), valueRedisSerializer(value));
         } catch (Exception e) {
             log.error(e.getMessage(), e);
-        } finally {
-            jedis.close();
         }
         return result;
     }
@@ -631,19 +469,14 @@ public class RedisClient {
      */
     public static Long saddBatch(String key, Object... values) {
         Long result = 0L;
-        Jedis jedis = jedisPool.getResource();
-        if (jedis == null) {
-            return result;
-        }
-        try {
+
+        try (Jedis jedis = jedisPool.getResource()) {
             for (Object value : values) {
                 jedis.sadd(keyRedisSerializer(key), valueRedisSerializer(value));
                 result++;
             }
         } catch (Exception e) {
             log.error(e.getMessage(), e);
-        } finally {
-            jedis.close();
         }
         return result;
     }
@@ -653,16 +486,10 @@ public class RedisClient {
      */
     public static Set<Object> smembers(String key) {
         Set<Object> result = null;
-        Jedis jedis = jedisPool.getResource();
-        if (jedis == null) {
-            return null;
-        }
-        try {
+        try (Jedis jedis = jedisPool.getResource()) {
             result = objectSetConvertFromByte(jedis.smembers(keyRedisSerializer(key)));
         } catch (Exception e) {
             log.error(e.getMessage(), e);
-        } finally {
-            jedis.close();
         }
         return result;
     }
@@ -672,16 +499,10 @@ public class RedisClient {
      */
     public static Long scard(String key) {
         Long result = null;
-        Jedis jedis = jedisPool.getResource();
-        if (jedis == null) {
-            return null;
-        }
-        try {
+        try (Jedis jedis = jedisPool.getResource()) {
             result = jedis.scard(keyRedisSerializer(key));
         } catch (Exception e) {
             log.error(e.getMessage(), e);
-        } finally {
-            jedis.close();
         }
         return result;
     }
@@ -691,16 +512,10 @@ public class RedisClient {
      */
     public static Double zincrby(String key, double score, Object value) {
         Double result = null;
-        Jedis jedis = jedisPool.getResource();
-        if (jedis == null) {
-            return null;
-        }
-        try {
+        try (Jedis jedis = jedisPool.getResource()) {
             result = jedis.zincrby(keyRedisSerializer(key), score, valueRedisSerializer(value));
         } catch (Exception e) {
             log.error(e.getMessage(), e);
-        } finally {
-            jedis.close();
         }
         return result;
     }
@@ -710,51 +525,33 @@ public class RedisClient {
      */
     public static Long zcard(String key) {
         Long result = null;
-        Jedis jedis = jedisPool.getResource();
-        if (jedis == null) {
-            return null;
-        }
-        try {
+        try (Jedis jedis = jedisPool.getResource()) {
             result = jedis.zcard(keyRedisSerializer(key));
         } catch (Exception e) {
             log.error(e.getMessage(), e);
-        } finally {
-            jedis.close();
         }
         return result;
     }
 
     public static Set<Tuple> zrangeByScoreWithScores(String key, double min, double max, int offset, int count) {
         Set<Tuple> result = null;
-        Jedis jedis = jedisPool.getResource();
-        if (jedis == null) {
-            return null;
-        }
-        try {
+        try (Jedis jedis = jedisPool.getResource()) {
             result = jedis.zrangeByScoreWithScores(keyRedisSerializer(key), min, max, offset, count);
         } catch (Exception e) {
             log.error(e.getMessage(), e);
-        } finally {
-            jedis.close();
         }
         return result;
     }
 
     /**
-     *  返回有序集 key 中， score 值介于 max 和 min 之间(默认包括等于 max 或 min )的所有的成员。有序集成员按 score 值递减(从大到小)的次序排列。
+     *  返回有序集 key 中， score 值介于 max 和 min 之间(默认包括等于 max 或 min )的所有的成员。有序集成员按 score 值递减(从大到小)的次序排列。 
      */
     public static Set<Tuple> zrevrangeByScoreWithScores(String key, double max, double min, int offset, int count) {
         Set<Tuple> result = null;
-        Jedis jedis = jedisPool.getResource();
-        if (jedis == null) {
-            return null;
-        }
-        try {
+        try (Jedis jedis = jedisPool.getResource()) {
             result = jedis.zrevrangeByScoreWithScores(keyRedisSerializer(key), max, min, offset, count);
         } catch (Exception e) {
             log.error(e.getMessage(), e);
-        } finally {
-            jedis.close();
         }
         return result;
     }
@@ -764,16 +561,10 @@ public class RedisClient {
      */
     public static Transaction multi() {
         Transaction result = null;
-        Jedis jedis = jedisPool.getResource();
-        if (jedis == null) {
-            return null;
-        }
-        try {
+        try (Jedis jedis = jedisPool.getResource()) {
             result = jedis.multi();
         } catch (Exception e) {
             log.error(e.getMessage(), e);
-        } finally {
-            jedis.close();
         }
         return result;
     }
