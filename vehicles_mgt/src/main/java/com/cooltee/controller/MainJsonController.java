@@ -28,7 +28,7 @@ public class MainJsonController {
     @RequestMapping("/user")
     @ResponseBody
     public Map<String, String> json(){
-        Map<String, String> result = userService.getUserInfo();
-        return result;
+        //Map<String, String> result = userService.getUserInfo();
+        return null;
     }
 }

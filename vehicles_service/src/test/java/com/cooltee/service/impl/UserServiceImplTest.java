@@ -22,10 +22,4 @@ public class UserServiceImplTest extends TransSpringTestSupport{
     @Autowired
     private UserService userService;
 
-    @Test
-    public void testGetUserInfo()  {
-        Map<String, String> result = userService.getUserInfo();
-        assertNotNull(result);
-        System.out.print(result.size());
-    }
 }
