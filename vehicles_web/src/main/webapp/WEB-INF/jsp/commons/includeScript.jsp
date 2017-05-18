@@ -3,7 +3,6 @@
 
 <%-- include jquery--%>
 <script type="text/javascript" src= "${pageContext.request.contextPath}/statics/jquery/jquery-3.1.1.js"></script>
-<%--<script type="text/javascript" src="${pageContext.request.contextPath}/vendors/jquery/dist/jquery.min.js"></script>--%>
 
 <%-- include framework --%>
 <%-- bootstrap --%>

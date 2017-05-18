@@ -1,9 +1,14 @@
 <%-- Created by Daniel on 2017/5/3 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
-<%@include file="commons/includeStyle.jsp"%>
-<link rel="stylesheet" href="../../statics/css/login.css">
+<%-- bootstrap --%>
+<link rel="stylesheet" href="${pageContext.request.contextPath}/statics/bootstrap/css/bootstrap.min.css">
+<%-- font-awesome --%>
+<link rel="stylesheet" href="${pageContext.request.contextPath}/statics/font-awesome/css/font-awesome.min.css">
 
+<link rel="stylesheet" href="${pageContext.request.contextPath}/statics/css/login.css">
+
+<link rel="shortcut icon" href="${pageContext.request.contextPath}/assets/icon/favicon.ico">
 <head>
     <title>login - Vehicles Management System</title>
 </head>
@@ -50,7 +55,12 @@
         </div>
     </div>
 </body>
-<%@include file="commons/includeScript.jsp"%>
-<script type="text/javascript" src="../../statics/js/login.js"></script>
-<script type="text/javascript" src="../../statics/jquery/jquery.backstretch.min.js"></script>
+
+<%-- include jquery--%>
+<script type="text/javascript" src= "${pageContext.request.contextPath}/statics/jquery/jquery-3.1.1.js"></script>
+<%-- bootstrap --%>
+<script type="text/javascript" src="${pageContext.request.contextPath}/statics/bootstrap/js/bootstrap.min.js"></script>
+
+<script type="text/javascript" src="${pageContext.request.contextPath}/statics/js/login.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/statics/jquery/jquery.backstretch.min.js"></script>
 </html>
