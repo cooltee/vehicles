@@ -2,19 +2,25 @@ package com.cooltee.service.impl
 
 import com.cooltee.dao.entity.User
 import com.cooltee.dao.interfaces.UserDao
+import com.cooltee.service.interfaces.SessionService
 import com.cooltee.service.interfaces.UserService
+import com.cooltee.session.SessionInfo
+import com.cooltee.util.StringUtil
 import org.apache.logging.log4j.LogManager
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Service
 
+/**
+ * The Implements of User Service
+ * Created by Daniel on 2017/2/11.
+ */
 @Service
-class UserServiceImpl(@Autowired private val userDao: UserDao): UserService {
+class UserServiceImpl(
+        @Autowired private val userDao: UserDao,
+        @Autowired private val sessionService: SessionService
+): UserService {
 
     private val logger = LogManager.getLogger(UserServiceImpl::class)
-
-    override fun getUserInfo(): Map<String, String> {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-    }
 
     override fun login(username: String, password: String): String {
         var user: User?
@@ -27,6 +33,12 @@ class UserServiceImpl(@Autowired private val userDao: UserDao): UserService {
 
         if(user != null && password == user.password){
             logger.info(">> 用户${user.name}[id:${user.id}]登录成功!")
+            var sessionInfo = sessionService.getSessionInfo()
+            if (sessionInfo == null) {
+                sessionInfo = SessionInfo(StringUtil.generateUUID(), null)
+            }
+            sessionInfo.user = user
+            sessionService.save(sessionInfo)
             return "success"
         }
         return "fail"
