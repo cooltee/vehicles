@@ -57,11 +57,7 @@ public class RedisClient {
      *  value反序列化
      */
     private static Object valueRedisDeserializer(byte[] value) throws Exception {
-        if (null != value) {
-            return valueRedisSerializer.deserialize(value);
-        } else {
-            return null;
-        }
+        return value != null ? valueRedisSerializer.deserialize(value) : null;
     }
 
     private static Map<byte[], byte[]> byteMapConvertFromObject(Map<String, Object> hash) throws Exception {
