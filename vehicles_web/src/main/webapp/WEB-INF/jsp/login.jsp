@@ -3,8 +3,7 @@
 <html>
 <%@include file="commons/includeStyle.jsp"%>
 <link rel="stylesheet" href="../../statics/css/login.css">
-<script type="text/javascript" src="../../statics/js/login.js"></script>
-<script type="text/javascript" src="../../statics/jquery/jquery.backstretch.min.js"></script>
+
 <head>
     <title>login - Vehicles Management System</title>
 </head>
@@ -14,7 +13,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-sm-8 col-sm-offset-2 text">
-                        <h1><strong>Vehicles Management System</strong> Login</h1>
+                        <h1><strong>Vehicles Management System</strong> | Login</h1>
                         <div class="description">
                             车辆管理系统登陆
                         </div>
@@ -51,4 +50,7 @@
         </div>
     </div>
 </body>
+<%@include file="commons/includeScript.jsp"%>
+<script type="text/javascript" src="../../statics/js/login.js"></script>
+<script type="text/javascript" src="../../statics/jquery/jquery.backstretch.min.js"></script>
 </html>

@@ -1,1 +1,4 @@
-<jsp:forward page="WEB-INF/jsp/index.jsp"/>
+<%
+    response.setStatus(HttpServletResponse.SC_MOVED_PERMANENTLY);
+    response.setHeader("Location", "/index");
+%>
