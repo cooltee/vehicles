@@ -97,8 +97,6 @@ public class RedisClient {
     }
 
     /**
-     *
-     *  set
      *  设置键值     注：使用set方法添加的数字类型数据，不可以使用自增或自减 
      */
     public static String set(String key, Object value) {
@@ -112,10 +110,7 @@ public class RedisClient {
     }
 
     /**
-     *
-     *  setex
      *  设置生存时间
-     * 
      */
     public static String setex(String key, int seconds, Object value) {
         String result = null;
@@ -141,8 +136,6 @@ public class RedisClient {
     }
 
     /**
-     *
-     *  getIncrAndDecrValue
      *  获取自增或自减操作的值，该方法获取的值无需序列化
      */
     public static Object getIncrAndDecrValue(String key) {
@@ -156,8 +149,6 @@ public class RedisClient {
     }
 
     /**
-     *
-     *  exists
      *  判断指定key是否存在
      */
     public static Boolean exists(String key) {
@@ -172,8 +163,6 @@ public class RedisClient {
     }
 
     /**
-     *
-     *  expire
      *   为给定 key 设置生存时间
      */
     public static Long expire(String key, int seconds) {
@@ -187,8 +176,6 @@ public class RedisClient {
     }
 
     /**
-     *
-     *  expireAt
      *  在某个时间点失效
      */
     public static Long expireAt(String key, long unixTime) {
@@ -202,8 +189,6 @@ public class RedisClient {
     }
 
     /**
-     *
-     *  getSet
      *  获取一个set
      */
     public static Object getSet(String key, Object value) {
@@ -217,8 +202,7 @@ public class RedisClient {
     }
 
     /**
-     *
-     *  对指定key进行自减操作，每次减少指定数值，对不存在的key，自动创建并减指定数值 
+     *  对指定key进行自减操作，每次减少指定数值，对不存在的key，自动创建并减指定数值
      */
     public static Long decrBy(String key, long integer) {
         Long result = null;
@@ -231,7 +215,6 @@ public class RedisClient {
     }
 
     /**
-     *
      *  对指定key进行自减操作，每次减少1，对不存在的key，自动创建并减1
      */
     public static Long decr(String key) {
@@ -298,9 +281,7 @@ public class RedisClient {
     }
 
     /**
-     *
-     *  同时将多个 field-value (域-值)对设置到哈希表 key 中 
-     * 
+     *  同时将多个 field-value (域-值)对设置到哈希表 key 中
      */
     public static String hmset(String key, Map<String, Object> hash) {
         String result = null;
