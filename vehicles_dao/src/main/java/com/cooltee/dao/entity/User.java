@@ -4,6 +4,7 @@ import com.cooltee.dao.orm.BaseEntity;
 import org.hibernate.annotations.Cache;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.sql.Timestamp;
 import java.util.Date;
 
@@ -14,7 +15,7 @@ import java.util.Date;
 
 @Entity
 @Table(name = "veh_user")
-public class User extends BaseEntity {
+public class User extends BaseEntity implements Serializable {
 
     @Id
     @GeneratedValue
