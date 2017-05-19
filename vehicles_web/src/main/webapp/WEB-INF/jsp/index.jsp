@@ -1,3 +1,4 @@
+<jsp:useBean id="sessionInfo" scope="request" type="com.cooltee.session.SessionInfo"/>
 <%-- Created by Daniel on 2017/5/4 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
@@ -11,7 +12,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-
 </head>
 
 <body class="nav-md">
@@ -20,7 +20,7 @@
         <div class="col-md-3 left_col menu_fixed">
             <div class="left_col scroll-view">
                 <div class="navbar nav_title" style="border: 0;">
-                    <a href="#" class="site_title"><i class="fa fa-paw"></i> <span>Gentelella Alela!</span></a>
+                    <a href="#" class="site_title"><i class="fa fa-paw"></i><span>车辆管理系统</span></a>
                 </div>
 
                 <div class="clearfix"></div>
@@ -32,7 +32,7 @@
                     </div>
                     <div class="profile_info">
                         <span>Welcome,</span>
-                        <h2>John Doe</h2>
+                        <h2>${sessionInfo.user.name}</h2>
                     </div>
                 </div>
                 <!-- /menu profile quick info -->
@@ -173,7 +173,7 @@
                     <ul class="nav navbar-nav navbar-right">
                         <li class="">
                             <a href="javascript:" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                                <img src="${pageContext.request.contextPath}/assets/img/images.png" alt="">John Doe
+                                <img src="${pageContext.request.contextPath}/assets/img/images.png" alt="">${sessionInfo.user.name}
                                 <span class=" fa fa-angle-down"></span>
                             </a>
                             <ul class="dropdown-menu dropdown-usermenu pull-right">

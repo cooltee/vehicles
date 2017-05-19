@@ -31,8 +31,9 @@ open class SignedInterceptor(@Autowired private val sessionService: SessionServi
     }
 
     override fun postHandle(request: HttpServletRequest, response: HttpServletResponse?, any: Any?, mav: ModelAndView?) {
-        sessionService.destroyCache()
         sessionService.refreshEffective(getSessionId(request))
+        request.setAttribute("sessionInfo", sessionService.getSessionInfo())
+        sessionService.destroyCache()
     }
 
     override fun afterCompletion(request: HttpServletRequest?, response: HttpServletResponse?, any: Any?, e: Exception?) {

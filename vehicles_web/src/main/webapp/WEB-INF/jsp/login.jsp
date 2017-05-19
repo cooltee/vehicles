@@ -19,6 +19,7 @@
                 <div class="row">
                     <div class="col-sm-8 col-sm-offset-2 text">
                         <h1><strong>Vehicles Management System</strong> | Login</h1>
+
                         <div class="description">
                             车辆管理系统登陆
                         </div>
