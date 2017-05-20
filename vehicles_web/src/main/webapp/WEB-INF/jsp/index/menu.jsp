@@ -32,7 +32,7 @@
                     <li><a href="#">Dashboard3</a></li>
                 </ul>
             </li>
-            <li><a>< class="fa fa-edit"></i> Forms <span class="fa fa-chevron-down"></span></a>
+            <li><a><i class="fa fa-edit"></i> Forms <span class="fa fa-chevron-down"></span></a>
                 <ul class="nav child_menu">
                     <li><a href="#">General Form</a></li>
                     <li><a href="#">Advanced Components</a></li>

@@ -25,7 +25,7 @@ $(function() {
             }
         });
         if (flag) {
-            $.ajax("/doLogin",{
+            $.ajax("/sign/in",{
                 data: $('#login-form').serialize(),
                 type: "POST",
                 success: function (result) {

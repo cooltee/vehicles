@@ -47,7 +47,7 @@
                                     </a>
                                 </li>
                                 <li><a href="javascript:">Help</a></li>
-                                <li><a href="#"><i class="fa fa-sign-out pull-right"></i> 退出</a></li>
+                                <li><a href="${pageContext.request.contextPath}/sign/out"><i class="fa fa-sign-out pull-right"></i> 退出</a></li>
                             </ul>
                         </li>
 

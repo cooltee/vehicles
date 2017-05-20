@@ -8,7 +8,7 @@
 
 <link rel="stylesheet" href="${pageContext.request.contextPath}/statics/css/login.css">
 
-<link rel="shortcut icon" href="${pageContext.request.contextPath}/assets/icon/favicon.ico">
+<link rel="icon" href="${pageContext.request.contextPath}/assets/icon/favicon.ico">
 <head>
     <title>login - Vehicles Management System</title>
 </head>
@@ -20,9 +20,7 @@
                     <div class="col-sm-8 col-sm-offset-2 text">
                         <h1><strong>Vehicles Management System</strong> | Login</h1>
 
-                        <div class="description">
-                            车辆管理系统登陆
-                        </div>
+                        <div class="description"> 车辆管理系统登陆 </div>
                         <input type="hidden" id="redirectUrl" value="${requestScope.redirectUrl}">
                     </div>
                 </div>

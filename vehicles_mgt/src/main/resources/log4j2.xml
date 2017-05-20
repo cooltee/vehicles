@@ -24,7 +24,7 @@
     </RollingRandomAccessFile>
 
     <Loggers>
-        <Logger name="com.cooltee.controller.LoginController" level="trace" additivity="true">
+        <Logger name="com.cooltee.controller.SignController" level="trace" additivity="true">
             <AppenderRef ref="Vehicles_sign"/>
         </Logger>
 

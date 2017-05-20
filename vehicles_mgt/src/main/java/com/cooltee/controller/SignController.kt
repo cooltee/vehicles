@@ -13,32 +13,21 @@ import javax.servlet.http.HttpServletRequest
 import javax.servlet.http.HttpServletResponse
 
 /**
- * controller of login
+ * controller of sign
  * Created by Daniel on 2017/5/4.
  */
 @Controller
-@RequestMapping("/")
-class LoginController(
+@RequestMapping("/sign")
+class SignController(
         @Autowired private val userService: UserService,
         @Autowired private val sessionService: SessionService
 ) {
 
-    private val logger = LogManager.getLogger(LoginController::class)
+    private val logger = LogManager.getLogger(SignController::class)
 
-    @RequestMapping("index")
-    fun index(): String {
-        return "index"
-    }
-
-    @RequestMapping("login")
-    fun login(request: HttpServletRequest, t: String?): String {
-        request.setAttribute("redirectUrl", t)
-        return "login"
-    }
-
-    @RequestMapping(value = "doLogin", method = arrayOf(RequestMethod.POST))
+    @RequestMapping(value = "in", method = arrayOf(RequestMethod.POST))
     @ResponseBody
-    fun doLogin(response: HttpServletResponse, username: String, password: String): String {
+    fun signIn(response: HttpServletResponse, username: String, password: String): String {
         logger.info(">>> Do login!")
         val result = userService.login(username, password)
         if (result == "success") {
