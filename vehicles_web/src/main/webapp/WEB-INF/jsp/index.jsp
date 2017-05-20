@@ -14,151 +14,12 @@
 
 </head>
 
-<body class="nav-md">
+<body class="nav-md footer_fixed">
 <div class="container body">
     <div class="main_container">
         <div class="col-md-3 left_col menu_fixed">
             <div class="left_col scroll-view">
-                <div class="navbar nav_title" style="border: 0;">
-                    <a href="#" class="site_title"><i class="fa fa-paw"></i><span>车辆管理系统</span></a>
-                </div>
-
-                <div class="clearfix"></div>
-
-                <!-- menu profile quick info -->
-                <div class="profile clearfix">
-                    <div class="profile_pic">
-                        <img src="${pageContext.request.contextPath}/assets/img/images.png" alt="..." class="img-circle profile_img">
-                    </div>
-                    <div class="profile_info">
-                        <span>Welcome,</span>
-                        <h2>${sessionInfo.user.name}</h2>
-                    </div>
-                </div>
-                <!-- /menu profile quick info -->
-
-                <br />
-
-                <!-- sidebar menu -->
-                <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
-                    <div class="menu_section">
-                        <h3>General</h3>
-                        <ul class="nav side-menu">
-                            <li><a><i class="fa fa-home"></i> Home <span class="fa fa-chevron-down"></span></a>
-                                <ul class="nav child_menu">
-                                    <li><a href="#">Dashboard</a></li>
-                                    <li><a href="#">Dashboard2</a></li>
-                                    <li><a href="#">Dashboard3</a></li>
-                                </ul>
-                            </li>
-                            <li><a><i class="fa fa-edit"></i> Forms <span class="fa fa-chevron-down"></span></a>
-                                <ul class="nav child_menu">
-                                    <li><a href="#">General Form</a></li>
-                                    <li><a href="#">Advanced Components</a></li>
-                                    <li><a href="#">Form Validation</a></li>
-                                    <li><a href="#">Form Wizard</a></li>
-                                    <li><a href="#">Form Upload</a></li>
-                                    <li><a href="#">Form Buttons</a></li>
-                                </ul>
-                            </li>
-                            <li><a><i class="fa fa-desktop"></i> UI Elements <span class="fa fa-chevron-down"></span></a>
-                                <ul class="nav child_menu">
-                                    <li><a href="#">General Elements</a></li>
-                                    <li><a href="#">Media Gallery</a></li>
-                                    <li><a href="#">Typography</a></li>
-                                    <li><a href="#">Icons</a></li>
-                                    <li><a href="#">Glyphicons</a></li>
-                                    <li><a href="#">Widgets</a></li>
-                                    <li><a href="#">Invoice</a></li>
-                                    <li><a href="#">Inbox</a></li>
-                                    <li><a href="#">Calendar</a></li>
-                                </ul>
-                            </li>
-                            <li><a><i class="fa fa-table"></i> Tables <span class="fa fa-chevron-down"></span></a>
-                                <ul class="nav child_menu">
-                                    <li><a href="#">Tables</a></li>
-                                    <li><a href="#">Table Dynamic</a></li>
-                                </ul>
-                            </li>
-                            <li><a><i class="fa fa-bar-chart-o"></i> Data Presentation <span class="fa fa-chevron-down"></span></a>
-                                <ul class="nav child_menu">
-                                    <li><a href="#">Chart JS</a></li>
-                                    <li><a href="#">Chart JS2</a></li>
-                                    <li><a href="#">Moris JS</a></li>
-                                    <li><a href="#">ECharts</a></li>
-                                    <li><a href="#">Other Charts</a></li>
-                                </ul>
-                            </li>
-                            <li><a><i class="fa fa-clone"></i>Layouts <span class="fa fa-chevron-down"></span></a>
-                                <ul class="nav child_menu">
-                                    <li><a href="#">Fixed Sidebar</a></li>
-                                    <li><a href="#">Fixed Footer</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="menu_section">
-                        <h3>Live On</h3>
-                        <ul class="nav side-menu">
-                            <li><a><i class="fa fa-bug"></i> Additional Pages <span class="fa fa-chevron-down"></span></a>
-                                <ul class="nav child_menu">
-                                    <li><a href="#">E-commerce</a></li>
-                                    <li><a href="#">Projects</a></li>
-                                    <li><a href="#">Project Detail</a></li>
-                                    <li><a href="#">Contacts</a></li>
-                                    <li><a href="#">Profile</a></li>
-                                </ul>
-                            </li>
-                            <li><a><i class="fa fa-windows"></i> Extras <span class="fa fa-chevron-down"></span></a>
-                                <ul class="nav child_menu">
-                                    <li><a href="#">403 Error</a></li>
-                                    <li><a href="#">404 Error</a></li>
-                                    <li><a href="#">500 Error</a></li>
-                                    <li><a href="#">Plain Page</a></li>
-                                    <li><a href="#">Login Page</a></li>
-                                    <li><a href="#">Pricing Tables</a></li>
-                                </ul>
-                            </li>
-                            <li><a><i class="fa fa-sitemap"></i> Multilevel Menu <span class="fa fa-chevron-down"></span></a>
-                                <ul class="nav child_menu">
-                                    <li><a href="#">Level One</a>
-                                    <li><a>Level One<span class="fa fa-chevron-down"></span></a>
-                                        <ul class="nav child_menu">
-                                            <li class="sub_menu"><a href="#">Level Two</a>
-                                            </li>
-                                            <li><a href="#">Level Two</a>
-                                            </li>
-                                            <li><a href="#">Level Two</a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="#">Level One</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li><a href="javascript:void(0)"><i class="fa fa-laptop"></i> Landing Page <span class="label label-success pull-right">Coming Soon</span></a></li>
-                        </ul>
-                    </div>
-
-                </div>
-                <!-- /sidebar menu -->
-
-                <!-- /menu footer buttons -->
-                <div class="sidebar-footer hidden-small">
-                    <a data-toggle="tooltip" data-placement="top" title="Settings">
-                        <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
-                    </a>
-                    <a data-toggle="tooltip" data-placement="top" title="FullScreen">
-                        <span class="glyphicon glyphicon-fullscreen" aria-hidden="true"></span>
-                    </a>
-                    <a data-toggle="tooltip" data-placement="top" title="Lock">
-                        <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
-                    </a>
-                    <a data-toggle="tooltip" data-placement="top" title="Logout" href="#">
-                        <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
-                    </a>
-                </div>
-                <!-- /menu footer buttons -->
+                <%@ include file="index/menu.jsp" %>
             </div>
         </div>
 
@@ -172,7 +33,8 @@
 
                     <ul class="nav navbar-nav navbar-right">
                         <li class="">
-                            <a href="javascript:" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                            <a href="javascript:" class="user-profile dropdown-toggle" data-toggle="dropdown"
+                               aria-expanded="false">
                                 <img src="${pageContext.request.contextPath}/assets/img/images.png" alt="">${sessionInfo.user.name}
                                 <span class=" fa fa-angle-down"></span>
                             </a>
@@ -185,52 +47,16 @@
                                     </a>
                                 </li>
                                 <li><a href="javascript:">Help</a></li>
-                                <li><a href="#"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
+                                <li><a href="#"><i class="fa fa-sign-out pull-right"></i> 退出</a></li>
                             </ul>
                         </li>
 
                         <li role="presentation" class="dropdown">
                             <a href="javascript:" class="dropdown-toggle info-number" data-toggle="dropdown" aria-expanded="false">
                                 <i class="fa fa-envelope-o"></i>
-                                <span class="badge bg-green">6</span>
+                                <span class="badge bg-green">1</span>
                             </a>
                             <ul id="menu1" class="dropdown-menu list-unstyled msg_list" role="menu">
-                                <li>
-                                    <a>
-                                        <span class="image"><img src="${pageContext.request.contextPath}/assets/img/images.png" alt="Profile Image" /></span>
-                                        <span>
-                          <span>John Smith</span>
-                          <span class="time">3 mins ago</span>
-                        </span>
-                                        <span class="message">
-                          Film festivals used to be do-or-die moments for movie makers. They were where...
-                        </span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a>
-                                        <span class="image"><img src="${pageContext.request.contextPath}/assets/img/images.png" alt="Profile Image" /></span>
-                                        <span>
-                          <span>John Smith</span>
-                          <span class="time">3 mins ago</span>
-                        </span>
-                                        <span class="message">
-                          Film festivals used to be do-or-die moments for movie makers. They were where...
-                        </span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a>
-                                        <span class="image"><img src="${pageContext.request.contextPath}/assets/img/images.png" alt="Profile Image" /></span>
-                                        <span>
-                          <span>John Smith</span>
-                          <span class="time">3 mins ago</span>
-                        </span>
-                                        <span class="message">
-                          Film festivals used to be do-or-die moments for movie makers. They were where...
-                        </span>
-                                    </a>
-                                </li>
                                 <li>
                                     <a>
                                         <span class="image"><img src="${pageContext.request.contextPath}/assets/img/images.png" alt="Profile Image" /></span>
@@ -264,17 +90,39 @@
             <div class="">
                 <div class="page-title">
                     <div class="title_left">
-                        <h3>Fixed Sidebar <small> Just add class <strong>menu_fixed</strong></small></h3>
+                        <h3>Plain Page</h3>
+                    </div>
+
+                    <div class="title_right">
+                        <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Search for...">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-default" type="button">Go!</button>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="clearfix"></div>
+
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="x_panel">
+                            <div class="framer"></div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
         <!-- /page content -->
 
+
         <!-- footer content -->
         <footer>
-            <div class="pull-right">
-                Gentelella - Bootstrap Admin Template by <a href="https://colorlib.com">Colorlib</a>
+            <div class="pull-right footer_fixed">
+                Vehicles Management System - by <a href="#">Cooltee</a>
             </div>
             <div class="clearfix"></div>
         </footer>
@@ -284,4 +132,21 @@
 
 </body>
 <%@include file="commons/includeScript.jsp"%>
+<script type="text/javascript">
+
+    function loadOnFrame(target) {
+        $.get(target, function(data){
+            $(".framer").html(data);
+        })
+    }
+
+    $(function(){
+        loadOnFrame("/page/welcome");
+
+        $('.nav.child_menu>li>a').click(function(){
+            loadOnFrame($(this).attr('href'));
+        });
+    });
+
+</script>
 </html>

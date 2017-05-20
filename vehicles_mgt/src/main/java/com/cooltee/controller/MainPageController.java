@@ -29,4 +29,10 @@ public class MainPageController {
         return "spring";
     }
 
+
+    @RequestMapping("/welcome")
+    public String welcome(){
+        return "page/welcome";
+    }
+
 }
