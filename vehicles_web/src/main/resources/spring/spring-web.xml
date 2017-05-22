@@ -12,7 +12,7 @@
             <mvc:exclude-mapping path="/statics/**"/>
             <mvc:exclude-mapping path="/assets/**"/>
             <mvc:exclude-mapping path="/login"/>
-            <mvc:exclude-mapping path="/sign"/>
+            <mvc:exclude-mapping path="/sign/**"/>
             <ref bean="signedInterceptor"/>
         </mvc:interceptor>
     </mvc:interceptors>
