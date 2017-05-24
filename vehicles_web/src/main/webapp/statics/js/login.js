@@ -29,18 +29,19 @@ $(function() {
                 data: $('#login-form').serialize(),
                 type: "POST",
                 success: function (result) {
-                if (result === "success") {
-                    var redirectUrl = $('#redirectUrl').val();
-                    window.location.href = redirectUrl ? redirectUrl : "/index";
-                } else {
-                    var msg = $('.msg');
-                    msg.addClass("msg-error");
-                    msg[0].innerText = "用户名与密码不匹配，请重新输入！";
-                    $('.login-form input[type="text"], .login-form input[type="password"], .login-form textarea').each(function() {
-                        $(this).addClass('input-error');
-                    });
+                    if (result === "success") {
+                        var redirectUrl = $('#redirectUrl').val();
+                        window.location.href = redirectUrl ? redirectUrl : "/index";
+                    } else {
+                        var msg = $('.msg');
+                        msg.addClass("msg-error");
+                        msg[0].innerText = "用户名与密码不匹配，请重新输入！";
+                        $('.login-form input[type="text"], .login-form input[type="password"], .login-form textarea').each(function() {
+                            $(this).addClass('input-error');
+                        });
+                    }
                 }
-            }});
+            });
         }
         return false;
     })
