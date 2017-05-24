@@ -1,11 +1,9 @@
 package com.cooltee.service.impl
 
-import com.cooltee.dao.interfaces.UserDao
 import com.cooltee.redis.RedisClient
 import com.cooltee.service.interfaces.SessionService
 import com.cooltee.session.SessionInfo
 import com.cooltee.util.Utils
-import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Service
 
 /**
@@ -13,7 +11,7 @@ import org.springframework.stereotype.Service
  * Created by Daniel on 2017/5/16.
  */
 @Service
-class SessionServiceImpl(@Autowired private val userDao: UserDao) : SessionService {
+class SessionServiceImpl : SessionService {
 
     private val cache: ThreadLocal<SessionInfo> = ThreadLocal<SessionInfo>()
 
