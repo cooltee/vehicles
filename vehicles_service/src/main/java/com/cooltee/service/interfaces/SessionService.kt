@@ -17,4 +17,6 @@ interface SessionService {
     fun refreshEffective(sessionId: String)
 
     fun save(sessionInfo: SessionInfo)
+
+    fun delete(sessionId: String)
 }

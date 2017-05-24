@@ -7,4 +7,5 @@ package com.cooltee.service.interfaces
 interface UserService {
 
     fun login(username: String, password: String): String
+    fun logout(sessionId: String)
 }

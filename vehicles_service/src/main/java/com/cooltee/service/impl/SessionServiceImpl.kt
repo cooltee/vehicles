@@ -4,7 +4,7 @@ import com.cooltee.dao.interfaces.UserDao
 import com.cooltee.redis.RedisClient
 import com.cooltee.service.interfaces.SessionService
 import com.cooltee.session.SessionInfo
-import com.cooltee.util.StringUtil
+import com.cooltee.util.Utils
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Service
 
@@ -24,7 +24,7 @@ class SessionServiceImpl(@Autowired private val userDao: UserDao) : SessionServi
     override fun checkSigned(sessionId: String): Boolean {
         var sessionInfo = RedisClient.get(sessionId) as SessionInfo?
         if (sessionInfo == null) {
-            sessionInfo = SessionInfo(StringUtil.generateUUID(), null)
+            sessionInfo = SessionInfo(Utils.generateUUID(), null)
         }
         val flag = sessionId == sessionInfo.sid
         if (flag) {
@@ -44,5 +44,10 @@ class SessionServiceImpl(@Autowired private val userDao: UserDao) : SessionServi
     override fun save(sessionInfo: SessionInfo) {
         cache.set(sessionInfo)
         RedisClient.setex(sessionInfo.sid, 1800, sessionInfo)
+    }
+
+    override fun delete(sessionId: String) {
+        RedisClient.del(sessionId)
+        destroyCache()
     }
 }

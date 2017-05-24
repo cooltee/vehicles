@@ -2,7 +2,8 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
 <%-- include jquery--%>
-<script type="text/javascript" src= "${pageContext.request.contextPath}/statics/jquery/jquery-3.1.1.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/statics/jquery/jquery-3.1.1.min.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/statics/jquery/jquery-mousewheel/jquery.mousewheel.min.js"></script>
 
 <%-- include framework --%>
 <%-- bootstrap --%>
@@ -15,9 +16,10 @@
 <script type="text/javascript" src="${pageContext.request.contextPath}/statics/nprogress/nprogress.js"></script>
 
 <!-- jQuery custom content scroller -->
-<script type="text/javascript" src="${pageContext.request.contextPath}/statics/jquery/plugin/custom-scrollbar/jquery.mCustomScrollbar.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/statics/jquery/plugin/custom-scrollbar/jquery.mCustomScrollbar.min.js"></script>
 
 <!-- Custom Theme script -->
-<script src="${pageContext.request.contextPath}/statics/js/custom.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/statics/js/custom.min.js"></script>
 
 <%-- include js files --%>
+<script type="text/javascript" src="${pageContext.request.contextPath}/statics/js/script.js"></script>

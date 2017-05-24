@@ -1,6 +1,7 @@
 package com.cooltee.interceptor
 
 import com.cooltee.service.interfaces.SessionService
+import com.cooltee.util.getSessionId
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Component
 import org.springframework.web.servlet.HandlerInterceptor
@@ -39,13 +40,5 @@ open class SignedInterceptor(@Autowired private val sessionService: SessionServi
     override fun afterCompletion(request: HttpServletRequest?, response: HttpServletResponse?, any: Any?, e: Exception?) {
     }
 
-    private fun getSessionId(request: HttpServletRequest): String {
-        var sessionId = ""
-        request.cookies?.map{
-            if("SIGNED_SID" == it.name){
-                sessionId = it.value
-            }
-        }
-        return sessionId
-    }
 }
+
