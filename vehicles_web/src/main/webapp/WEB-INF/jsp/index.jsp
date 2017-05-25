@@ -1,5 +1,5 @@
-<jsp:useBean id="sessionInfo" scope="request" type="com.cooltee.session.SessionInfo"/>
 <%-- Created by Daniel on 2017/5/4 --%>
+<jsp:useBean id="sessionInfo" scope="request" type="com.cooltee.session.SessionInfo"/>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <%@include file="commons/includeStyle.jsp"%>
@@ -7,7 +7,6 @@
     <title>Vehicles Management System</title>
 
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <!-- Meta, title, CSS, favicons, etc. -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">

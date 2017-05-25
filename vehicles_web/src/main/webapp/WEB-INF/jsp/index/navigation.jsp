@@ -10,7 +10,7 @@
             <li class="">
                 <a href="javascript:" class="user-profile dropdown-toggle" data-toggle="dropdown"
                    aria-expanded="false">
-                    <img src="${pageContext.request.contextPath}/assets/img/images.png" alt="">${sessionInfo.user.name}
+                    <img src="${pageContext.request.contextPath}/assets/img/images.png" alt=""> ${sessionInfo.user.name}
                     <span class=" fa fa-angle-down"></span>
                 </a>
                 <ul class="dropdown-menu dropdown-usermenu pull-right">
