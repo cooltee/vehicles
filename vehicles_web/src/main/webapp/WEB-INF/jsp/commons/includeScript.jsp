@@ -12,9 +12,6 @@
 <!-- FastClick -->
 <script type="text/javascript" src="${pageContext.request.contextPath}/statics/fastclick/lib/fastclick.js"></script>
 
-<!-- NProgress script -->
-<script type="text/javascript" src="${pageContext.request.contextPath}/statics/nprogress/nprogress.js"></script>
-
 <!-- jQuery custom content scroller -->
 <script type="text/javascript" src="${pageContext.request.contextPath}/statics/jquery/plugin/custom-scrollbar/jquery.mCustomScrollbar.min.js"></script>
 
@@ -23,3 +20,6 @@
 
 <%-- include js files --%>
 <script type="text/javascript" src="${pageContext.request.contextPath}/statics/js/script.js"></script>
+
+<!-- NProgress script -->
+<script type="text/javascript" src="${pageContext.request.contextPath}/statics/nprogress/nprogress.js"></script>
