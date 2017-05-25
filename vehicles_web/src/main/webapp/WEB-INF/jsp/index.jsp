@@ -29,34 +29,7 @@
 
         <!-- page content -->
         <div class="right_col" role="main">
-            <div class="">
-                <div class="page-title">
-                    <div class="title_left">
-                        <h3>Plain Page</h3>
-                    </div>
-
-                    <div class="title_right">
-                        <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
-                            <div class="input-group">
-                                <input type="text" class="form-control" placeholder="Search for...">
-                                <span class="input-group-btn">
-                                    <button class="btn btn-default" type="button">Go!</button>
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="clearfix"></div>
-
-                <div class="row">
-                    <div class="col-md-12 col-sm-12 col-xs-12">
-                        <div class="x_panel">
-                            <div class="framer"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <%@ include file="index/content.jsp" %>
         </div>
         <!-- /page content -->
 
@@ -74,21 +47,4 @@
 
 </body>
 <%@include file="commons/includeScript.jsp"%>
-<script type="text/javascript">
-
-    function loadOnFrame(target) {
-        $.get(target, function(data){
-            $(".framer").html(data);
-        })
-    }
-
-    $(function(){
-        loadOnFrame("/page/welcome");
-
-        $('.nav.child_menu>li>a').click(function(){
-            loadOnFrame($(this).attr('href'));
-        });
-    });
-
-</script>
 </html>

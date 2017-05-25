@@ -1,3 +1,5 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
 <div class="nav_menu">
     <nav>
         <div class="nav toggle">

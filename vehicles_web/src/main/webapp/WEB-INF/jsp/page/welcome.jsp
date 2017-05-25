@@ -2,7 +2,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <body>
-<div style="height: 600px">
+<div style="min-height: 600px">
     <h2>welcome to <b>Vehicles Management System</b></h2>
 </div>
 </body>
