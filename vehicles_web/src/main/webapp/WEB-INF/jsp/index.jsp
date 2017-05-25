@@ -44,7 +44,7 @@
         <!-- /footer content -->
     </div>
 </div>
-
+<input type="hidden" id="contentPath" name="contentPath" value="${pageContext.request.contextPath}">
 </body>
 <%@include file="commons/includeScript.jsp"%>
 </html>

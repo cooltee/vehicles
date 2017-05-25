@@ -2,9 +2,12 @@
  * external javascript functions
  * Created by Daniel on 2017/5/5.
  */
+
+var contentPath = $('#contentPath').val();
+
 function signOut() {
     //TODO confirm
-    $.ajax("/sign/out",{
+    $.ajax(contentPath + "/sign/out",{
         success: function (result) {
             if (result === "success") {
                 window.location.href = "/index";
@@ -20,7 +23,7 @@ function loadOnFrame(target) {
 }
 
 $(function () {
-    loadOnFrame("/page/welcome");
+    loadOnFrame(contentPath + "/page/welcome");
 
     $('.nav.child_menu>li>a').click(function(){
         loadOnFrame($(this).attr('href'));
