@@ -23,7 +23,7 @@
 
         <!-- top navigation -->
         <div class="top_nav">
-            <%@ include file="navigation.jsp" %>
+            <%@ include file="index/navigation.jsp" %>
         </div>
         <!-- /top navigation -->
 
