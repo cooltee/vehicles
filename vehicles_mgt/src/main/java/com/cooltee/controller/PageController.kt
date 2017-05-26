@@ -15,4 +15,39 @@ class PageController {
     fun welcome(): String {
         return "page/welcome"
     }
+
+    @RequestMapping("/userInfo")
+    fun userInfo(): String {
+        return "page/info/user"
+    }
+
+    @RequestMapping("/vehicleInfo")
+    fun vehicleInfo(): String {
+        return "page/info/vehicle"
+    }
+
+    @RequestMapping("/driverInfo")
+    fun driverInfo(): String {
+        return "page/info/driver"
+    }
+
+    @RequestMapping("/repairCost")
+    fun repairCost(): String {
+        return "cost/repair"
+    }
+
+    @RequestMapping("/energyCost")
+    fun energyCost(): String {
+        return "cost/energy"
+    }
+
+    @RequestMapping("/parkingCost")
+    fun parkingCost(): String {
+        return "cost/parking"
+    }
+
+    @RequestMapping("/otherCost")
+    fun otherCost(): String {
+        return "cost/other"
+    }
 }

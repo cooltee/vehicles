@@ -24,8 +24,4 @@ function loadOnFrame(target) {
 
 $(function () {
     loadOnFrame(contentPath + "/page/welcome");
-
-    $('.nav.child_menu>li>a').click(function(){
-        loadOnFrame($(this).attr('href'));
-    });
 });
