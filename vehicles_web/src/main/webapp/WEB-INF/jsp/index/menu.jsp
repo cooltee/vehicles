@@ -31,15 +31,15 @@
                     <ul class="nav child_menu">
                         <li><a href="javascript:loadOnFrame('/page/userInfo');">用户信息</a></li>
                         <li><a href="javascript:loadOnFrame('/page/vehicleInfo')">车辆信息</a></li>
-                        <li><a href="javascript:loadOnFrame('driverInfo')">驾驶员信息</a></li>
+                        <li><a href="javascript:loadOnFrame('/page/driverInfo')">驾驶员信息</a></li>
                     </ul>
                 </li>
                 <li><a><i class="fa fa-edit"></i> 车辆费用 <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                        <li><a href="javascript:loadOnFrame('repairCost')">维修费用</a></li>
-                        <li><a href="javascript:loadOnFrame('parkingCost')">停车费用</a></li>
-                        <li><a href="javascript:loadOnFrame('energyCost')">能源费用</a></li>
-                        <li><a href="javascript:loadOnFrame('otherCost')">其他费用</a></li>
+                        <li><a href="javascript:loadOnFrame('/page/repairCost')">维修费用</a></li>
+                        <li><a href="javascript:loadOnFrame('/page/parkingCost')">停车费用</a></li>
+                        <li><a href="javascript:loadOnFrame('/page/energyCost')">能源费用</a></li>
+                        <li><a href="javascript:loadOnFrame('/page/otherCost')">其他费用</a></li>
                     </ul>
                 </li>
                 <li><a><i class="fa fa-desktop"></i> 维修管理 <span class="fa fa-chevron-down"></span></a>
