@@ -254,13 +254,9 @@ img { max-width: 100%; }
 @media (min-width: 768px) and (max-width: 991px) {}
 
 @media (max-width: 767px) {
-
     .inner-bg { padding: 60px 0 110px 0; }
-
 }
 
 @media (max-width: 415px) {
-
     h1, h2 { font-size: 32px; }
-
 }
