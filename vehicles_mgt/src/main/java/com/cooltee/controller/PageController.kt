@@ -33,21 +33,21 @@ class PageController {
 
     @RequestMapping("/repairCost")
     fun repairCost(): String {
-        return "cost/repair"
+        return "page/cost/repair"
     }
 
     @RequestMapping("/energyCost")
     fun energyCost(): String {
-        return "cost/energy"
+        return "page/cost/energy"
     }
 
     @RequestMapping("/parkingCost")
     fun parkingCost(): String {
-        return "cost/parking"
+        return "page/cost/parking"
     }
 
     @RequestMapping("/otherCost")
     fun otherCost(): String {
-        return "cost/other"
+        return "page/cost/other"
     }
 }
