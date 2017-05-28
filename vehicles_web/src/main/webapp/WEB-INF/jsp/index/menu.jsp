@@ -3,7 +3,7 @@
 <div class="left_col scroll-view">
 
     <div class="navbar nav_title" style="border: 0;">
-        <a href="javascript:void(0)" class="site_title"><i class="fa fa-car"></i><span> 车辆管理系统</span></a>
+        <a href="javascript:loadOnFrame('/page/welcome')" class="site_title"><i class="fa fa-car"></i><span> 车辆管理系统</span></a>
     </div>
 
     <div class="clearfix"></div>
@@ -29,7 +29,7 @@
             <ul class="nav side-menu">
                 <li><a><i class="fa fa-home"></i> 基本信息 <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                        <li><a href="javascript:loadOnFrame('/page/userInfo');">用户信息</a></li>
+                        <li><a href="javascript:loadOnFrame('/page/userInfo')">用户信息</a></li>
                         <li><a href="javascript:loadOnFrame('/page/vehicleInfo')">车辆信息</a></li>
                         <li><a href="javascript:loadOnFrame('/page/driverInfo')">驾驶员信息</a></li>
                     </ul>

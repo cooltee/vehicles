@@ -15,6 +15,13 @@
 <!-- NProgress style -->
 <link rel="stylesheet" href="${pageContext.request.contextPath}/statics/nprogress/nprogress.css">
 
+<!-- DataTables -->
+<link href="${pageContext.request.contextPath}/statics/jquery/plugin/dataTables/dataTables.bootstrap.min.css" rel="stylesheet">
+<link href="${pageContext.request.contextPath}/statics/jquery/plugin/dataTables/buttons/buttons.bootstrap.min.css" rel="stylesheet">
+<link href="${pageContext.request.contextPath}/statics/jquery/plugin/dataTables/fixedHeader/fixedHeader.bootstrap.min.css" rel="stylesheet">
+<link href="${pageContext.request.contextPath}/statics/jquery/plugin/dataTables/responsive/responsive.bootstrap.min.css" rel="stylesheet">
+<link href="${pageContext.request.contextPath}/statics/jquery/plugin/dataTables/scroller/scroller.bootstrap.min.css" rel="stylesheet">
+
 <!-- Custom Theme style -->
 <link rel="stylesheet" href="${pageContext.request.contextPath}/statics/css/custom.min.css">
 
