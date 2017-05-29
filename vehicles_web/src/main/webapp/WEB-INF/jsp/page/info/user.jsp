@@ -35,7 +35,7 @@
             "url": contentPath + "/data/user", //从一个ajax数据源读取数据给表格内容
             "dataSrc": "" //数据属性或操作表数据的方法
         },
-        columns: [{
+        "columns": [{
             "data": "id",
             "orderable": true, // 启用排序
             "defaultContent": "",
