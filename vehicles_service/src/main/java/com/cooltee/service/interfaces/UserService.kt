@@ -10,5 +10,5 @@ interface UserService {
 
     fun login(username: String, password: String): String
     fun logout(sessionId: String)
-    fun  queryAll(): MutableList<User>
+
 }

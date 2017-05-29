@@ -32,7 +32,7 @@
         "ordering": true,//全局禁用排序
         "serverSide":false,//是否开启服务器模式
         "ajax": {
-            "url": contentPath + "/data/user", //从一个ajax数据源读取数据给表格内容
+            "url": contentPath + "/data/userInfo", //从一个ajax数据源读取数据给表格内容
             "dataSrc": "" //数据属性或操作表数据的方法
         },
         "columns": [{

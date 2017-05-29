@@ -49,7 +49,4 @@ class UserServiceImpl(
         sessionService.delete(sessionId)
     }
 
-    override fun  queryAll(): MutableList<User> {
-        return userDao.findAll()
-    }
 }
