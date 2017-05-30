@@ -6,6 +6,7 @@
 </div>
 <div class="x_content">
     <p class="text-muted font-13 m-b-30"></p>
+    <button type="button" class="btn"><span class="glyphicon glyphicon-plus"></span>新增</button>
     <table id="datatable-fixed-header" class="table table-striped table-bordered">
         <thead>
         <tr>
@@ -55,7 +56,7 @@
             "sProcessing": "正在获取数据，请稍后...",
             "sLengthMenu": "显示 _MENU_ 条",
             "sZeroRecords": "没有找到数据",
-            "sInfo": "从 _START_ 到  _END_ 条记录 总记录数为 _TOTAL_ 条",
+            "sInfo": "第 _START_ ~ _END_ 条 / 共 _TOTAL_ 条记录",
             "sInfoEmpty": "记录数为0",
             "sInfoFiltered": "(全部记录数 _MAX_ 条)",
             "sInfoPostFix": "",
