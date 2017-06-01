@@ -49,4 +49,12 @@ class UserServiceImpl(
         sessionService.delete(sessionId)
     }
 
+    override fun changePass(original: String, new: String) {
+        val user = sessionService.getSessionInfo()!!.user
+        if (original != user!!.password)
+            throw Exception("原密码不正确！")
+        user.password = new
+        userDao.update(user)
+    }
+
 }
