@@ -8,7 +8,7 @@ import com.cooltee.dao.entity.User
  */
 interface UserService {
 
-    fun login(username: String, password: String): String
+    fun login(username: String, password: String): Boolean
     fun logout(sessionId: String)
     fun changePass(original: String, new: String)
 

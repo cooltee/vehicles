@@ -31,7 +31,7 @@ class SignController(
     fun signIn(response: HttpServletResponse, username: String, password: String): String {
         logger.info(">>> $username sign in system ...")
         val result = userService.login(username, password)
-        if (result == "success") {
+        if (result) {
             val sid = sessionService.getSessionInfo()!!.sid
             val cookie = Cookie("SIGNED_SID", sid)
             cookie.path = "/"
@@ -39,8 +39,9 @@ class SignController(
             cookie.maxAge = -1
             response.addCookie(cookie)
             logger.info(">>> succeed!   sid=$sid")
+            return "success"
         }
-        return result
+        return "failure"
     }
 
     @RequestMapping("/out")

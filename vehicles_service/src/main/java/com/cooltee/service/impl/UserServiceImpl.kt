@@ -23,7 +23,7 @@ class UserServiceImpl(
 
     private val logger = LogManager.getLogger(UserServiceImpl::class)
 
-    override fun login(username: String, password: String): String {
+    override fun login(username: String, password: String): Boolean {
         var user: User?
         try {
             val id = username.toLong()
@@ -40,9 +40,9 @@ class UserServiceImpl(
             }
             sessionInfo.user = user
             sessionService.save(sessionInfo)
-            return "success"
+            return true
         }
-        return "fail"
+        return false
     }
 
     override fun logout(sessionId: String) {
