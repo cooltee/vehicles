@@ -9,13 +9,15 @@ import com.cooltee.util.Utils
 import org.apache.logging.log4j.LogManager
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Service
+import org.springframework.transaction.annotation.Transactional
 
 /**
  * The Implements of User Service
  * Created by Daniel on 2017/2/11.
  */
 @Service
-class UserServiceImpl(
+@Transactional
+open class UserServiceImpl(
         @Autowired private val userDao: UserDao,
         @Autowired private val sessionService: SessionService
 ): UserService {
@@ -50,11 +52,13 @@ class UserServiceImpl(
     }
 
     override fun changePass(original: String, new: String) {
-        val user = sessionService.getSessionInfo()!!.user
-        if (original != user!!.password)
+        val sessionInfo = sessionService.getSessionInfo()!!
+        if (original != sessionInfo.user!!.password) {
             throw Exception("原密码不正确！")
-        user.password = new
-        userDao.update(user)
+        }
+        sessionInfo.user!!.password = new
+        userDao.update(sessionInfo.user)
+        sessionService.save(sessionInfo)
     }
 
 }
