@@ -31,8 +31,9 @@
                         </button>
                         <h4 class="modal-title" id="myModalLabel">修改密码</h4>
                     </div>
+                    <form role="form" method="post" class="chgPass-form" id="chgPassForm">
                     <div class="modal-body modal-form">
-                        <form role="form" action="" method="post" class="chgPass-form" id="chgPassForm">
+
                             <div class="form-group">
                                 <label class="sr-only" for="original">original</label>
                                 <input type="password" name="original" id="original" placeholder="原密码" class="form-control original">
@@ -45,13 +46,14 @@
                                 <label class="sr-only" for="check">check</label>
                                 <input type="password" name="check" id="check" placeholder="确认密码" class="form-control check">
                             </div>
-                        </form>
+                            <p class="input-error"></p>
+
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-                        <button type="button" class="btn btn-primary" onclick="changePass()">修改</button>
+                        <button type="submit" class="btn btn-primary">修改</button>
                     </div>
-
+                    </form>
                 </div>
             </div>
         </div>
@@ -83,9 +85,7 @@
         -ms-transition: all .3s;
         transition: all .3s;
     }
-</style>
-<script type="text/javascript">
-    function changePass() {
-
+    form .input-error {
+        border-color: #f00;
     }
-</script>
+</style>
