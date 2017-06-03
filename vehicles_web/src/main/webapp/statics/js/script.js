@@ -46,7 +46,7 @@ $(function () {
                 $(this).removeClass('input-error');
             }
         });
-        /*if (flag) {
+        if (flag) {
             $.ajax(contentPath + "/chgPass",{
                 data: $('#chgPassForm').serialize(),
                 type: "POST",
@@ -58,14 +58,14 @@ $(function () {
                             type: 'success',
                             styling: 'bootstrap3'
                         });
+                        alert("success")
                     } else {
 
                     }
                 }
             });
-        } else {
-            return false;
-        }*/
+        }
+        return false;
     })
 
 });
