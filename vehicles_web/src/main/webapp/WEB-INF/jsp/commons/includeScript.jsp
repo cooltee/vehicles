@@ -15,6 +15,8 @@
 <!-- jQuery custom content scroller -->
 <script type="text/javascript" src="${pageContext.request.contextPath}/statics/jquery/plugin/custom-scrollbar/jquery.mCustomScrollbar.min.js"></script>
 
+<!-- pnotify -->
+<script type="text/javascript" src="${pageContext.request.contextPath}/statics/pnotify/pnotify.custom.min.js"></script>
 <!-- DataTables -->
 <script type="text/javascript" src="${pageContext.request.contextPath}/statics/jquery/plugin/dataTables/jquery.dataTables.min.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/statics/jquery/plugin/dataTables/dataTables.bootstrap.min.js"></script>
