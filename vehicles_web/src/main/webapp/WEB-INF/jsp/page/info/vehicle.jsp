@@ -6,23 +6,23 @@
 </div>
 <div class="x_content">
     <p class="text-muted font-13 m-b-30"></p>
-    <table id="datatable-fixed-header" class="table table-striped table-bordered">
+    <table id="datatable-vehicle" class="table table-striped table-bordered">
         <thead>
-        <tr>
-            <th>车牌号</th>
-            <th>制造商</th>
-            <th>型号</th>
-            <th>车型</th>
-            <th>用途</th>
-            <th>档案编号</th>
-        </tr>
+            <tr>
+                <th>车牌号</th>
+                <th>制造商</th>
+                <th>型号</th>
+                <th>车型</th>
+                <th>用途</th>
+                <th>档案编号</th>
+            </tr>
         </thead>
 
     </table>
 </div>
 
 <script type="text/javascript">
-    var dt = $('#datatable-fixed-header').DataTable({
+    var dt = $('#datatable-vehicle').DataTable({
         "lengthMenu": [5, 10, 20, 40],//定义在每页显示记录数的select中显示的选项
         "searching": true,//是否禁用搜索
         "lengthChange": true,//是否允许用户改变表格每页显示的记录数
@@ -39,7 +39,7 @@
             "dataSrc": "" //数据属性或操作表数据的方法
         },
         "columns": [{
-            "data": "registrationPlate",
+            "data": "registration_plate",
             "orderable": true, // 启用排序
             "defaultContent": "",
             "width": "10%"

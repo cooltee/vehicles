@@ -13,7 +13,7 @@ import org.springframework.stereotype.Service
 @Service
 class SessionServiceImpl : SessionService {
 
-    private val cache: ThreadLocal<SessionInfo> = ThreadLocal<SessionInfo>()
+    private val cache: ThreadLocal<SessionInfo> = ThreadLocal()
 
     override fun getSessionInfo(): SessionInfo? {
         return cache.get()

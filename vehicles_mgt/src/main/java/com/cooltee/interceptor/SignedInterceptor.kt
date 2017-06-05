@@ -17,10 +17,10 @@ import javax.servlet.http.HttpServletResponse
 @Component
 open class SignedInterceptor(@Autowired private val sessionService: SessionService) : HandlerInterceptor {
     override fun preHandle(request: HttpServletRequest, response: HttpServletResponse, any: Any?): Boolean {
-        val sid = getSessionId(request)
+        val sessionId = getSessionId(request)
 
-        if (sid != "") {
-            if (sessionService.checkSigned(sid)) {
+        if (sessionId != "") {
+            if (sessionService.checkSigned(sessionId)) {
                 return true
             }
         }
