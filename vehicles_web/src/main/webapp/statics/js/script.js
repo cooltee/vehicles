@@ -52,13 +52,13 @@ $(function () {
                 type: "POST",
                 success: function (result) {
                     if (result === "success") {
+                        $('.modal-chgPass').modal('hide');
                         new PNotify({
                             title: 'Success',
                             text: '密码修改成功！',
                             type: 'success',
                             styling: 'bootstrap3'
                         });
-                        alert("success")
                     } else {
 
                     }

@@ -58,6 +58,7 @@
             type: "POST",
             success: function (result) {
                 if (result === "success") {
+                    $('.modal-addUser').modal('hide');
                     new PNotify({
                         title: 'success',
                         text: '用户录入成功！',
