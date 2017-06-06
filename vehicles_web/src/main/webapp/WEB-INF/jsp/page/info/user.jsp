@@ -6,7 +6,8 @@
 </div>
 
 <div class="function">
-    <button type="button" class="btn" data-toggle="modal" data-target=".modal-addUser"><i class="glyphicon glyphicon-plus"></i>新增</button>
+    <button type="button" class="btn" data-toggle="modal" data-target=".modal-addUser">
+        <i class="glyphicon glyphicon-plus"></i>新增</button>
     <button type="button" class="btn" onclick="edit()"><i class="glyphicon glyphicon-pencil"></i>修改</button>
     <button type="button" class="btn" onclick="del()"><i class="glyphicon glyphicon-minus"></i>删除</button>
 </div>
