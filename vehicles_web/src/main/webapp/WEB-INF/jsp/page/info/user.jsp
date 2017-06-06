@@ -4,18 +4,22 @@
     <h2>Data Tables of <small>Users</small></h2>
     <div class="clearfix"></div>
 </div>
+
+<div class="function">
+    <button type="button" class="btn" data-toggle="modal" data-target=".modal-addUser"><i class="glyphicon glyphicon-plus"></i>新增</button>
+    <button type="button" class="btn" onclick="edit()"><i class="glyphicon glyphicon-pencil"></i>修改</button>
+    <button type="button" class="btn" onclick="del()"><i class="glyphicon glyphicon-minus"></i>删除</button>
+</div>
 <div class="x_content">
     <p class="text-muted font-13 m-b-30"></p>
-    <button type="button" class="btn" data-toggle="modal" data-target=".modal-addUser"><i class="glyphicon glyphicon-plus"></i>新增</button>
     <table id="datatable-user" class="table table-striped table-bordered">
         <thead>
-        <tr>
-            <th>ID</th>
-            <th>姓名</th>
-            <th>用户名</th>
-        </tr>
+            <tr>
+                <th>ID</th>
+                <th>姓名</th>
+                <th>用户名</th>
+            </tr>
         </thead>
-
     </table>
 </div>
 
@@ -31,17 +35,17 @@
             <div class="modal-body modal-form">
                 <form role="form" method="post" class="addUser-form" id="addUserForm">
                     <div class="form-group">
-                        <label for="name">original</label>
+                        <label for="name">姓名</label>
                         <input type="text" name="name" id="name" class="form-control original">
                     </div>
                     <div class="form-group">
-                        <label for="username">new</label>
+                        <label for="username">用户名</label>
                         <input type="text" name="username" id="username" class="form-control new">
                     </div>
                     <p class="input-error"></p>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-                        <button type="button" class="btn btn-primary" onclick="add()">提交</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal"><i class="glyphicon glyphicon-remove"></i>关闭</button>
+                        <button type="button" class="btn btn-primary" onclick="add()"><i class="glyphicon glyphicon-ok"></i>提交</button>
                     </div>
                </form>
             </div>
@@ -70,7 +74,14 @@
         });
     }
 
-    var dt = $('#datatable-user').DataTable({
+    function edit() {
+
+    }
+
+    function del() {
+
+    }
+    var dt = $('#datatable-user').DataTable($.extend({}, defaultDataTablesOption, {
         "ajax": {
             "url": contentPath + "/data/userInfo", //从一个ajax数据源读取数据给表格内容
             "dataSrc": "" //数据属性或操作表数据的方法
@@ -91,8 +102,7 @@
             "defaultContent": "",
             "width": "10%"
         }]
-
-    });
-    dt.dataTable(defaultDataTablesOption);
+    }));
     dt.draw(false);
+
 </script>
