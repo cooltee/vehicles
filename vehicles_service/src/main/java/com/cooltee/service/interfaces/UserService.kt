@@ -11,5 +11,6 @@ interface UserService {
     fun login(username: String, password: String): Boolean
     fun logout(sessionId: String)
     fun changePass(original: String, new: String)
+    fun addUser(name: String, username: String)
 
 }

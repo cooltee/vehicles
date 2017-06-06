@@ -2,6 +2,7 @@ package com.cooltee.dao.entity;
 
 import com.cooltee.dao.orm.BaseEntity;
 import org.hibernate.annotations.Cache;
+import org.jetbrains.annotations.NotNull;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -16,6 +17,9 @@ import java.util.Date;
 @Entity
 @Table(name = "veh_user")
 public class User extends BaseEntity implements Serializable {
+
+    public static final String DEFAULT_PASSWORD = "123456";
+    public static final int DEFAULT_STATE = 1;
 
     @Id
     @GeneratedValue
@@ -39,6 +43,17 @@ public class User extends BaseEntity implements Serializable {
 
     @Column(name = "update_time")
     private Timestamp update_time;
+
+    public User(){
+
+    }
+
+    public User(@NotNull String name, @NotNull String username, @NotNull String password, int state) {
+        this.name = name;
+        this.username = username;
+        this.password = password;
+        this.state = state;
+    }
 
     @Override
     public void setId(Long id) { this.id = id; }

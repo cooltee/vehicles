@@ -6,7 +6,7 @@
 </div>
 <div class="x_content">
     <p class="text-muted font-13 m-b-30"></p>
-    <button type="button" class="btn"><i class="glyphicon glyphicon-plus"></i>新增</button>
+    <button type="button" class="btn" data-toggle="modal" data-target=".modal-addUser"><i class="glyphicon glyphicon-plus"></i>新增</button>
     <table id="datatable-fixed-header" class="table table-striped table-bordered">
         <thead>
         <tr>
@@ -19,7 +19,56 @@
     </table>
 </div>
 
+<div class="modal fade modal-addUser" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span>
+                </button>
+                <h4 class="modal-title" id="myModalLabel">用户信息录入</h4>
+            </div>
+            <div class="modal-body modal-form">
+                <form role="form" method="post" class="addUser-form" id="addUserForm">
+                    <div class="form-group">
+                        <label for="name">original</label>
+                        <input type="text" name="name" id="name" class="form-control original">
+                    </div>
+                    <div class="form-group">
+                        <label for="username">new</label>
+                        <input type="text" name="username" id="username" class="form-control new">
+                    </div>
+                    <p class="input-error"></p>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                        <button type="button" class="btn btn-primary" onclick="add()">提交</button>
+                    </div>
+               </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 <script type="text/javascript">
+
+    function add() {
+        $.ajax(contentPath + '/data/addUser',{
+            data: $('#addUserForm').serialize(),
+            type: "POST",
+            success: function (result) {
+                if (result === "success") {
+                    new PNotify({
+                        title: 'success',
+                        text: '用户录入成功！',
+                        type: 'success',
+                        styling: 'bootstrap3'
+                    })
+                }
+            }
+        });
+    }
+
     var dt = $('#datatable-fixed-header').DataTable({
         "lengthMenu": [5, 10, 20, 40],//定义在每页显示记录数的select中显示的选项
         "searching": true,//是否禁用搜索

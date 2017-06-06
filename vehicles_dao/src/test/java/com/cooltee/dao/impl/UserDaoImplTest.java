@@ -28,7 +28,7 @@ public class UserDaoImplTest extends TransSpringTestSupport {
 
     @BeforeClass
     public static void setup() {
-        user = new User();
+        user = new User("daniel","admin", User.DEFAULT_PASSWORD, User.DEFAULT_STATE);
         user.setName("spring");
     }
 
