@@ -30,18 +30,16 @@
                         <li><a href="javascript:loadOnFrame('/page/otherCost')">其他费用</a></li>
                     </ul>
                 </li>
-                <li><a><i class="fa fa-desktop"></i> 维修管理 <span class="fa fa-chevron-down"></span></a>
+                <li><a><i class="fa fa-wrench"></i> 维修管理 <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                         <li><a href="javascript:void(0)">车辆保养</a></li>
                         <li><a href="javascript:void(0)">车辆维修</a></li>
                         <li><a href="javascript:void(0)">车辆年审</a></li>
                     </ul>
                 </li>
-                <li><a><i class="fa fa-bar-chart-o"></i> 报表展示 <span class="fa fa-chevron-down"></span></a>
+                <li><a><i class="fa fa-bar-chart-o"></i> 拓展功能<span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                        <li><a href="javascript:void(0)">Chart JS</a></li>
-                        <li><a href="javascript:void(0)">ECharts</a></li>
-                        <li><a href="javascript:void(0)">Other Charts</a></li>
+                        <li><a href="javascript:void(0)">敬请期待</a></li>
                     </ul>
                 </li>
 
