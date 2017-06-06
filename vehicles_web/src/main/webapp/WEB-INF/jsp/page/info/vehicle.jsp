@@ -5,7 +5,7 @@
     <div class="clearfix"></div>
 </div>
 <div class="function">
-    <button type="button" class="btn" data-toggle="modal" data-target=".modal-addUser">
+    <button type="button" class="btn" data-toggle="modal" data-target=".modal-addVehicle">
         <i class="glyphicon glyphicon-plus"></i>新增</button>
     <button type="button" class="btn" onclick="edit()"><i class="glyphicon glyphicon-pencil"></i>修改</button>
     <button type="button" class="btn" onclick="del()"><i class="glyphicon glyphicon-minus"></i>删除</button>
@@ -17,8 +17,8 @@
                 <th>车牌号</th>
                 <th>制造商</th>
                 <th>型号</th>
-                <th>车型</th>
-                <th>用途</th>
+                <th>车辆类型</th>
+                <th>车辆用途</th>
                 <th>档案编号</th>
             </tr>
         </thead>
@@ -26,7 +26,7 @@
     </table>
 </div>
 
-<div class="modal fade modal-addUser" tabindex="-1" role="dialog" aria-hidden="true">
+<div class="modal fade modal-addVehicle" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
 
@@ -36,14 +36,52 @@
                 <h4 class="modal-title" id="myModalLabel">车辆信息录入</h4>
             </div>
             <div class="modal-body modal-form">
-                <form role="form" method="post" class="addUser-form" id="addUserForm">
-                    <div class="form-group">
-                        <label for="name">original</label>
-                        <input type="text" name="name" id="name" class="form-control original">
+                <form role="form" method="post" class="addVehicle-form form-horizontal form-label-left" id="addVehicleForm">
+                    <div class="form-group modal-form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="registrationPlate">车牌号 <span class="required">*</span></label>
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+                            <input type="text" name="registrationPlate" id="registrationPlate" class="form-control col-md-7 col-xs-12">
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label for="username">new</label>
-                        <input type="text" name="username" id="username" class="form-control new">
+                    <div class="form-group modal-form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="manufacturers">制造商 <span class="required">*</span></label>
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+                            <input type="text" name="manufacturers" id="manufacturers" class="form-control col-md-7 col-xs-12">
+                        </div>
+                    </div>
+                    <div class="form-group modal-form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="models">型号 <span class="required">*</span></label>
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+                            <input type="text" name="models" id="models" class="form-control col-md-7 col-xs-12">
+                        </div>
+                    </div>
+                    <div class="form-group modal-form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="vehicleType">车辆类型 <span class="required">*</span></label>
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+                            <select name="vehicleType" id="vehicleType" class="form-control col-md-7 col-xs-12">
+                                <option value="1">Option one</option>
+                                <option value="2">Option two</option>
+                                <option value="3">Option three</option>
+                                <option value="4">Option four</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group modal-form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="vehiclePurpose">车辆用途 <span class="required">*</span></label>
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+                            <select name="vehiclePurpose" id="vehiclePurpose" class="form-control col-md-7 col-xs-12">
+                                <option value="1">Option one</option>
+                                <option value="2">Option two</option>
+                                <option value="3">Option three</option>
+                                <option value="4">Option four</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group modal-form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="archivesNo">档案编号 <span class="required">*</span></label>
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+                            <input type="text" name="archivesNo" id="archivesNo" class="form-control col-md-7 col-xs-12">
+                        </div>
                     </div>
                     <p class="input-error"></p>
                     <div class="modal-footer">
@@ -58,15 +96,15 @@
 
 <script type="text/javascript">
     function add() {
-        $.ajax(contentPath + '/data/addUser', {
-            data: $('#addUserForm').serialize(),
+        $.ajax(contentPath + '/data/addVehicle', {
+            data: $('#addVehicleForm').serialize(),
             type: "POST",
             success: function (result) {
                 if (result === "success") {
-                    $('.modal-addUser').modal('hide');
+                    $('.modal-addVehicle').modal('hide');
                     new PNotify({
                         title: 'success',
-                        text: '用户录入成功！',
+                        text: '车辆录入成功！',
                         type: 'success',
                         styling: 'bootstrap3'
                     })
