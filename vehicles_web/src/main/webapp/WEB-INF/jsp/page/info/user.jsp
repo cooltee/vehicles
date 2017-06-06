@@ -33,17 +33,17 @@
                 <h4 class="modal-title" id="myModalLabel">用户信息录入</h4>
             </div>
             <div class="modal-body modal-form">
-                <form role="form" method="post" class="addUser-form" id="addUserForm">
+                <form role="form" method="post" data-parsley-validate class="addUser-form form-horizontal form-label-left" id="addUserForm">
                     <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">姓名</label>
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">姓名 <span class="required">*</span></label>
                         <div class="col-md-9 col-sm-9 col-xs-12">
-                            <input type="text" name="name" id="name" class="form-control">
+                            <input type="text" name="name" id="name" class="form-control col-md-7 col-xs-12">
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="username">用户名</label>
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="username">用户名 <span class="required">*</span></label>
                         <div class="col-md-9 col-sm-9 col-xs-12">
-                            <input type="text" name="username" id="username" class="form-control">
+                            <input type="text" name="username" id="username" class="form-control col-md-7 col-xs-12">
                         </div>
                     </div>
                     <p class="input-error"></p>
