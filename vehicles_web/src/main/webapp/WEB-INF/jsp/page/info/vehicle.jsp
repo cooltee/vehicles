@@ -1,7 +1,7 @@
 <%-- Created by Daniel on 2017/5/26 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <div class="x_title">
-    <h2>Data Tables of <small>Vehicles</small></h2>
+    <h2>车辆信息管理</h2>
     <div class="clearfix"></div>
 </div>
 <div class="function">
