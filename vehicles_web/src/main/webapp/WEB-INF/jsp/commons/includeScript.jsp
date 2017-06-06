@@ -8,6 +8,8 @@
 <%-- include framework --%>
 <%-- bootstrap --%>
 <script type="text/javascript" src="${pageContext.request.contextPath}/statics/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/statics/bootstrap/daterangepicker/moment.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/statics/bootstrap/daterangepicker/daterangepicker.js"></script>
 
 <!-- FastClick -->
 <script type="text/javascript" src="${pageContext.request.contextPath}/statics/fastclick/lib/fastclick.js"></script>

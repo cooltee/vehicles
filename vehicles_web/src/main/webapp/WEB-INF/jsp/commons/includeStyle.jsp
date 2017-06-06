@@ -8,6 +8,7 @@
 
 <%-- bootstrap --%>
 <link rel="stylesheet" href="${pageContext.request.contextPath}/statics/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/statics/bootstrap/daterangepicker/daterangepicker.css">
 
 <%-- font-awesome --%>
 <link rel="stylesheet" href="${pageContext.request.contextPath}/statics/font-awesome/css/font-awesome.min.css">
