@@ -1,5 +1,6 @@
 package com.cooltee.service.interfaces
 
+import com.cooltee.dao.entity.Driver
 import com.cooltee.dao.entity.User
 import com.cooltee.dao.entity.Vehicle
 
@@ -10,4 +11,5 @@ import com.cooltee.dao.entity.Vehicle
 interface DataService {
     fun queryUsers(): MutableList<User>
     fun queryVehicles(): MutableList<Vehicle>
+    fun queryDrivers(): MutableList<Driver>
 }

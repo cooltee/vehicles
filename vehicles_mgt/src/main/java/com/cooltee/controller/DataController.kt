@@ -32,6 +32,12 @@ class DataController(
         return Gson().toJson(dataService.queryVehicles())
     }
 
+    @RequestMapping(value = "/driverInfo", produces = arrayOf("application/json;charset=UTF-8"))
+    @ResponseBody
+    fun driverData(): String {
+        return Gson().toJson(dataService.queryDrivers())
+    }
+
     @RequestMapping(value = "/addUser", method = arrayOf(RequestMethod.POST))
     @ResponseBody
     fun addUser(name: String, username: String): String {

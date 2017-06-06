@@ -45,7 +45,6 @@ public class User extends BaseEntity implements Serializable {
     private Timestamp update_time;
 
     public User(){
-
     }
 
     public User(@NotNull String name, @NotNull String username, @NotNull String password, int state) {
