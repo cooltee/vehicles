@@ -65,7 +65,7 @@ create table veh_driver
    name                 varchar(16) not null comment '姓名',
    gender               tinyint(1) not null comment '性别',
    id_card              varchar(18) comment '身份证',
-   telphone             varchar(16) comment '联系电话',
+   telephone             varchar(16) comment '联系电话',
    dept                 varchar(16) comment '所属部门',
    allow_date           date comment '准驾日期',
    allow_type           tinyint(4) comment '准驾车型',

@@ -33,8 +33,8 @@ public class Driver extends BaseEntity{
     @Column(name = "id_card")
     private String id_card;
 
-    @Column(name = "telphone")
-    private String telphone;
+    @Column(name = "telephone")
+    private String telephone;
 
     @Column(name = "allow_date")
     private Date allow_date;
@@ -82,12 +82,12 @@ public class Driver extends BaseEntity{
         return id_card;
     }
 
-    public void setTelphone(String telphone) {
-        this.telphone = telphone;
+    public void setTelephone(String telephone) {
+        this.telephone = telephone;
     }
 
-    public String getTelphone() {
-        return telphone;
+    public String getTelephone() {
+        return telephone;
     }
 
     public void setAllow_date(Date allow_date) {

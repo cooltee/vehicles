@@ -60,7 +60,7 @@ veh_driver
 | name        | varchar(16) | NO   |     | NULL              |                             |
 | gender      | tinyint(1)  | NO   |     | NULL              |                             |
 | id_card     | varchar(18) | YES  |     | NULL              |                             |
-| telphone    | varchar(16) | YES  |     | NULL              |                             |
+| telephone    | varchar(16) | YES  |     | NULL              |                             |
 | dept        | varchar(16) | YES  |     | NULL              |                             |
 | allow_date  | date        | YES  |     | NULL              |                             |
 | allow_type  | tinyint(4)  | YES  |     | NULL              |                             |
