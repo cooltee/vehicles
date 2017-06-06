@@ -35,12 +35,16 @@
             <div class="modal-body modal-form">
                 <form role="form" method="post" class="addUser-form" id="addUserForm">
                     <div class="form-group">
-                        <label for="name">姓名</label>
-                        <input type="text" name="name" id="name" class="form-control original">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">姓名</label>
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+                            <input type="text" name="name" id="name" class="form-control">
+                        </div>
                     </div>
                     <div class="form-group">
-                        <label for="username">用户名</label>
-                        <input type="text" name="username" id="username" class="form-control new">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="username">用户名</label>
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+                            <input type="text" name="username" id="username" class="form-control">
+                        </div>
                     </div>
                     <p class="input-error"></p>
                     <div class="modal-footer">
