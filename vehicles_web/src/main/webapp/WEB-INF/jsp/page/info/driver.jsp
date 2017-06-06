@@ -77,18 +77,13 @@
                     <div class="form-group modal-form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="allowDate">准驾日期 <span class="required">*</span></label>
                         <div class="col-md-9 col-sm-9 col-xs-12">
-                            <input type="text" name="allowDate" id="allowDate" class="form-control col-md-7 col-xs-12">
-                            <!-- fieldset>
-                                <div class="control-group">
-                                    <div class="controls">
-                                        <div class="col-md-11 xdisplay_inputx form-group has-feedback">
-                                            <input type="text" class="form-control has-feedback-left col-md-7 col-xs-12" id="allowDate" aria-describedby="inputSuccess">
-                                            <span class="fa fa-calendar-o form-control-feedback left" aria-hidden="true"></span>
-                                            <span id="inputSuccess" class="sr-only">(success)</span>
-                                        </div>
-                                    </div>
+                            <fieldset>
+                                <div class="xdisplay_inputx has-feedback">
+                                    <input type="text" name="allowDate" class="form-control has-feedback-left col-md-7 col-xs-12" id="allowDate" aria-describedby="inputSuccess">
+                                    <span class="fa fa-calendar-o form-control-feedback left" aria-hidden="true"></span>
+                                    <span id="inputSuccess" class="sr-only">(success)</span>
                                 </div>
-                            </fieldset-->
+                            </fieldset>
                         </div>
                     </div>
                     <div class="form-group modal-form-group">
@@ -134,6 +129,15 @@
     function del() {
 
     }
+
+    $('input[name="allowDate"]').daterangepicker({
+        singleDatePicker: true,
+        showDropdowns: true,
+        locale: {
+            format: 'YYYY-MM-DD'
+        }
+    });
+
     var dt = $('#datatable-user').DataTable($.extend({}, defaultDataTablesOption, {
         "ajax": {
             "url": contentPath + "/data/userInfo", //从一个ajax数据源读取数据给表格内容
