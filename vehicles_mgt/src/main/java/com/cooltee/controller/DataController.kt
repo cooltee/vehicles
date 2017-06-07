@@ -1,5 +1,6 @@
 package com.cooltee.controller
 
+import com.cooltee.service.interfaces.DataOperateService
 import com.cooltee.service.interfaces.DataService
 import com.cooltee.service.interfaces.UserService
 import com.google.gson.Gson
@@ -8,6 +9,8 @@ import org.springframework.stereotype.Controller
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RequestMethod
 import org.springframework.web.bind.annotation.ResponseBody
+import java.math.BigDecimal
+import java.sql.Date
 
 /**
  * dataTables ajax request query data about validation json string
@@ -17,7 +20,8 @@ import org.springframework.web.bind.annotation.ResponseBody
 @RequestMapping("/data")
 class DataController(
         @Autowired val dataService: DataService,
-        @Autowired val userService: UserService
+        @Autowired val userService: UserService,
+        @Autowired val dataOperateService: DataOperateService
 ) {
 
     @RequestMapping(value = "/userInfo", produces = arrayOf("application/json;charset=UTF-8"))
@@ -48,4 +52,17 @@ class DataController(
         }
         return "success"
     }
+
+    @RequestMapping(value = "addVehicle", method = arrayOf(RequestMethod.POST))
+    @ResponseBody
+    fun addVehicle(registrationPlate: String, manufacturers: String, models: String, vehicleType: Int, vehiclePurpose: Int,
+                   purchasePrice: BigDecimal, purchaseDept: String, purchaseDate: Date, archivesNo: String):String {
+        try {
+            dataOperateService.saveVehicle(registrationPlate, manufacturers, models, vehicleType, vehiclePurpose, purchasePrice, purchaseDept, purchaseDate, archivesNo)
+        } catch (e: Exception) {
+            return e.message!!
+        }
+        return "success"
+    }
+
 }
