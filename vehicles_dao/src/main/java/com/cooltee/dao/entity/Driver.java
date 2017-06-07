@@ -36,6 +36,9 @@ public class Driver extends BaseEntity{
     @Column(name = "telephone")
     private String telephone;
 
+    @Column(name = "dept")
+    private String dept;
+
     @Column(name = "allow_date")
     private Date allow_date;
 
@@ -88,6 +91,14 @@ public class Driver extends BaseEntity{
 
     public String getTelephone() {
         return telephone;
+    }
+
+    public void setDept(String dept) {
+        this.dept = dept;
+    }
+
+    public String getDept() {
+        return dept;
     }
 
     public void setAllow_date(Date allow_date) {

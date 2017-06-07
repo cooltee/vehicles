@@ -15,7 +15,7 @@ import java.sql.Date
  */
 @Service
 @Transactional
-class DataOperateServiceImpl(
+open class DataOperateServiceImpl(
         @Autowired val vehicleDao: VehicleDao
 ) : DataOperateService {
     override fun saveVehicle(registrationPlate: String, manufacturers: String, models: String, vehicleType: Int, vehiclePurpose: Int, purchasePrice: BigDecimal, purchaseDept: String, purchaseDate: Date, archivesNo: String) {
