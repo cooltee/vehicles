@@ -42,7 +42,7 @@ class DataController(
     @ResponseBody
     fun addUser(name: String, username: String): String {
         try {
-            userService.addUser(name, username)
+            userService.save(name, username)
         } catch (e: Exception) {
             return e.localizedMessage
         }
