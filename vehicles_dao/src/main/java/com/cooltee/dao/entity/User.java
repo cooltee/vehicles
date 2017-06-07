@@ -38,6 +38,9 @@ public class User extends BaseEntity implements Serializable {
     @Column(name = "state")
     private int state;
 
+    @Column(name = "comments")
+    private String comments;
+
     @Column(name = "create_time")
     private Timestamp create_time;
 
@@ -47,10 +50,11 @@ public class User extends BaseEntity implements Serializable {
     public User(){
     }
 
-    public User(@NotNull String name, @NotNull String username, @NotNull String password, int state) {
+    public User(@NotNull String name, @NotNull String username, @NotNull String password,String comments, int state) {
         this.name = name;
         this.username = username;
         this.password = password;
+        this.comments = comments;
         this.state = state;
     }
 
@@ -75,6 +79,14 @@ public class User extends BaseEntity implements Serializable {
     public void setPassword(String password) { this.password = password; }
 
     public String getPassword() { return password; }
+
+    public void setComments(String comments) {
+        this.comments = comments;
+    }
+
+    public String getComments() {
+        return comments;
+    }
 
     public void setState(int state) { this.state = state; }
 

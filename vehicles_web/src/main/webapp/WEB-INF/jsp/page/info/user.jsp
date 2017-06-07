@@ -19,6 +19,7 @@
                 <th>ID</th>
                 <th>姓名</th>
                 <th>用户名</th>
+                <th>备注</th>
             </tr>
         </thead>
     </table>
@@ -45,6 +46,12 @@
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="username">用户名 <span class="required">*</span></label>
                         <div class="col-md-9 col-sm-9 col-xs-12">
                             <input type="text" name="username" id="username" class="form-control col-md-7 col-xs-12">
+                        </div>
+                    </div>
+                    <div class="form-group modal-form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="comments">备注 <span class="required">*</span></label>
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+                            <input type="text" name="comments" id="comments" class="form-control col-md-7 col-xs-12">
                         </div>
                     </div>
                     <p class="input-error"></p>
@@ -103,6 +110,11 @@
             "width": "10%"
         }, {
             "data": "username",
+            "orderable": true, // 启用排序
+            "defaultContent": "",
+            "width": "10%"
+        }, {
+            "data": "comments",
             "orderable": true, // 启用排序
             "defaultContent": "",
             "width": "10%"

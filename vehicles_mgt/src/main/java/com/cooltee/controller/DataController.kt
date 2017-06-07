@@ -40,9 +40,9 @@ class DataController(
 
     @RequestMapping(value = "/addUser", method = arrayOf(RequestMethod.POST))
     @ResponseBody
-    fun addUser(name: String, username: String): String {
+    fun addUser(name: String, username: String, comments: String): String {
         try {
-            userService.save(name, username)
+            userService.save(name, username, comments)
         } catch (e: Exception) {
             return e.localizedMessage
         }
