@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
 <div class="left_col scroll-view">
@@ -17,7 +18,9 @@
             <ul class="nav side-menu">
                 <li><a><i class="fa fa-home"></i> 基本信息 <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                        <li><a href="javascript:loadOnFrame('/page/userInfo')">用户信息</a></li>
+                        <c:if test="${sessionInfo.permission == 1}">
+                            <li><a href="javascript:loadOnFrame('/page/userInfo')">用户信息</a></li>
+                        </c:if>
                         <li><a href="javascript:loadOnFrame('/page/vehicleInfo')">车辆信息</a></li>
                         <li><a href="javascript:loadOnFrame('/page/driverInfo')">驾驶员信息</a></li>
                     </ul>

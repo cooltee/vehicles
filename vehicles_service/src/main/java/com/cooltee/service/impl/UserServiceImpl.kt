@@ -38,9 +38,14 @@ open class UserServiceImpl(
             logger.info(">> 用户${user.name}[id:${user.id}]登录成功!")
             var sessionInfo = sessionService.getSessionInfo()
             if (sessionInfo == null) {
-                sessionInfo = SessionInfo(Utils.generateUUID(), null)
+                sessionInfo = SessionInfo(Utils.generateUUID(), null, null)
             }
             sessionInfo.user = user
+            if (user.username == "admin") {
+                sessionInfo.permission = 1
+            } else {
+                sessionInfo.permission = 0
+            }
             sessionService.save(sessionInfo)
             return true
         }

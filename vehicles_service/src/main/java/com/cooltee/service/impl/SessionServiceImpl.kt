@@ -22,7 +22,7 @@ class SessionServiceImpl : SessionService {
     override fun checkSigned(sessionId: String): Boolean {
         var sessionInfo = RedisClient.get(sessionId) as SessionInfo?
         if (sessionInfo == null) {
-            sessionInfo = SessionInfo(Utils.generateUUID(), null)
+            sessionInfo = SessionInfo(Utils.generateUUID(), null, null)
         }
         val flag = sessionId == sessionInfo.sid
         if (flag) {
