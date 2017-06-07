@@ -18,9 +18,6 @@
             <ul class="nav side-menu">
                 <li><a><i class="fa fa-home"></i> 基本信息 <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                        <c:if test="${sessionInfo.permission == 1}">
-                            <li><a href="javascript:loadOnFrame('/page/userInfo')">用户信息</a></li>
-                        </c:if>
                         <li><a href="javascript:loadOnFrame('/page/vehicleInfo')">车辆信息</a></li>
                         <li><a href="javascript:loadOnFrame('/page/driverInfo')">驾驶员信息</a></li>
                     </ul>
@@ -33,13 +30,20 @@
                         <li><a href="javascript:loadOnFrame('/page/otherCost')">其他费用</a></li>
                     </ul>
                 </li>
-                <li><a><i class="fa fa-wrench"></i> 维修管理 <span class="fa fa-chevron-down"></span></a>
+                <li><a><i class="fa fa-wrench"></i> 记录管理 <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                        <li><a href="javascript:void(0)">车辆保养</a></li>
-                        <li><a href="javascript:void(0)">车辆维修</a></li>
-                        <li><a href="javascript:void(0)">车辆年审</a></li>
+                        <li><a href="javascript:loadOnFrame('/page/maintenanceRecord')">车辆保养</a></li>
+                        <li><a href="javascript:loadOnFrame('/page/repairRecord')">车辆维修</a></li>
+                        <li><a href="javascript:loadOnFrame('/page/reviewRecord')">车辆年审</a></li>
                     </ul>
                 </li>
+                <c:if test="${sessionInfo.permission == 1}">
+                    <li><a><i class="fa fa-wrench"></i> 管理员功能 <span class="fa fa-chevron-down"></span></a>
+                        <ul class="nav child_menu">
+                            <li><a href="javascript:loadOnFrame('/page/userInfo')">用户管理</a></li>
+                        </ul>
+                    </li>
+                </c:if>
                 <li><a><i class="fa fa-bar-chart-o"></i> 拓展功能<span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                         <li><a href="javascript:void(0)">敬请期待</a></li>
