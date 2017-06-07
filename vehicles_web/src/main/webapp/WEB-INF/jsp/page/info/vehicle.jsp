@@ -111,7 +111,7 @@
         });
     }
 
-    $('input[name="allowDate"]').daterangepicker({
+    $('input[name="purchaseDate"]').daterangepicker({
         singleDatePicker: true,
         showDropdowns: true,
         locale: {
