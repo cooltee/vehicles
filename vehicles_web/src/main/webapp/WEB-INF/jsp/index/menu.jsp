@@ -26,7 +26,7 @@
                     <ul class="nav child_menu">
                         <li><a href="javascript:loadOnFrame('/page/repairCost')">维修费用</a></li>
                         <li><a href="javascript:loadOnFrame('/page/parkingCost')">停车费用</a></li>
-                        <li><a href="javascript:loadOnFrame('/page/energyCost')">能源费用</a></li>
+                        <li><a href="javascript:loadOnFrame('/page/energyCost')">燃油费用</a></li>
                         <li><a href="javascript:loadOnFrame('/page/otherCost')">其他费用</a></li>
                     </ul>
                 </li>

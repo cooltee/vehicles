@@ -1,12 +1,13 @@
 <%-- Created by Daniel on 2017/5/26 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <div class="x_title">
-    <h2>用户信息管理</h2>
+    <h2>其他费用管理</h2>
     <div class="clearfix"></div>
 </div>
 
 <div class="function">
-    <button type="button" class="btn" data-toggle="modal" data-target=".modal-addUser"><i class="glyphicon glyphicon-plus"></i>新增</button>
+    <button type="button" class="btn" data-toggle="modal" data-target=".modal-addUser">
+        <i class="glyphicon glyphicon-plus"></i>新增</button>
     <button type="button" class="btn" onclick="edit()"><i class="glyphicon glyphicon-pencil"></i>修改</button>
     <button type="button" class="btn" onclick="del()"><i class="glyphicon glyphicon-minus"></i>删除</button>
 </div>
@@ -18,6 +19,7 @@
             <th>ID</th>
             <th>姓名</th>
             <th>用户名</th>
+            <th>备注</th>
         </tr>
         </thead>
     </table>
@@ -33,14 +35,24 @@
                 <h4 class="modal-title" id="myModalLabel">用户信息录入</h4>
             </div>
             <div class="modal-body modal-form">
-                <form role="form" method="post" class="addUser-form" id="addUserForm">
-                    <div class="form-group">
-                        <label for="name">姓名</label>
-                        <input type="text" name="name" id="name" class="form-control original">
+                <form role="form" method="post" data-parsley-validate class="addUser-form form-horizontal form-label-left" id="addUserForm">
+                    <div class="form-group modal-form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">姓名 <span class="required">*</span></label>
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+                            <input type="text" name="name" id="name" class="form-control col-md-7 col-xs-12">
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label for="username">用户名</label>
-                        <input type="text" name="username" id="username" class="form-control new">
+                    <div class="form-group modal-form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="username">用户名 <span class="required">*</span></label>
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+                            <input type="text" name="username" id="username" class="form-control col-md-7 col-xs-12">
+                        </div>
+                    </div>
+                    <div class="form-group modal-form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="comments">备注 <span class="required">*</span></label>
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+                            <input type="text" name="comments" id="comments" class="form-control col-md-7 col-xs-12">
+                        </div>
                     </div>
                     <p class="input-error"></p>
                     <div class="modal-footer">
@@ -98,6 +110,11 @@
             "width": "10%"
         }, {
             "data": "username",
+            "orderable": true, // 启用排序
+            "defaultContent": "",
+            "width": "10%"
+        }, {
+            "data": "comments",
             "orderable": true, // 启用排序
             "defaultContent": "",
             "width": "10%"
