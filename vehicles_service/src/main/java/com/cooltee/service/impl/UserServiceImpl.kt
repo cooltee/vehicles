@@ -61,7 +61,7 @@ open class UserServiceImpl(
         sessionService.save(sessionInfo)
     }
 
-    override fun addUser(name: String, username: String) {
+    override fun save(name: String, username: String) {
         val originalUser: User? = userDao.findByUsername(username)
         if (originalUser != null) {
             throw Exception("该用户名已存在！")
