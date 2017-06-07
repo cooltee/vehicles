@@ -134,7 +134,7 @@
     }
 
     function del() {
-
+        dt.row('.selected').remove().draw( false );
     }
 
     $('input[name="allowDate"]').daterangepicker({

@@ -119,6 +119,10 @@
         });
     }
 
+    function del() {
+        dt.row('.selected').remove().draw( false );
+    }
+
     $('input[name="purchaseDate"]').daterangepicker({
         singleDatePicker: true,
         showDropdowns: true,

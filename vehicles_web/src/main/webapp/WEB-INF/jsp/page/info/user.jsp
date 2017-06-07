@@ -98,7 +98,7 @@
     }
 
     function del() {
-        dt.row('.selected').remove().draw( false );
+        dt.row('.selected').remove().draw(false );
     }
     var $datatableUser = $('#datatable-user');
         var dt = $datatableUser.DataTable($.extend({}, defaultDataTablesOption, {
