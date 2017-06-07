@@ -17,9 +17,9 @@
                 <th>车牌号</th>
                 <th>制造商</th>
                 <th>型号</th>
-                <th>车辆类型</th>
-                <th>车辆用途</th>
-                <th>档案编号</th>
+                <th>部门</th>
+                <th>购入价格</th>
+                <th>购入日期</th>
             </tr>
         </thead>
 
@@ -56,34 +56,32 @@
                         </div>
                     </div>
                     <div class="form-group modal-form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="vehicleType">车辆类型 <span class="required">*</span></label>
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="purchaseDept">部门 <span class="required">*</span></label>
                         <div class="col-md-9 col-sm-9 col-xs-12">
-                            <select name="vehicleType" id="vehicleType" class="form-control col-md-7 col-xs-12">
-                                <option value="1">Option one</option>
-                                <option value="2">Option two</option>
-                                <option value="3">Option three</option>
-                                <option value="4">Option four</option>
-                            </select>
+                            <input type="text" name="purchaseDept" id="purchaseDept" class="form-control col-md-7 col-xs-12">
+                        </div>
+                    </div>
+                    <input type="hidden" name="vehicleType" value="0">
+                    <input type="hidden" name="vehiclePurpose" value="0">
+                    <div class="form-group modal-form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="purchasePrice">购入价格 <span class="required">*</span></label>
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+                            <input type="text" name="purchasePrice" id="purchasePrice" class="form-control col-md-7 col-xs-12">
                         </div>
                     </div>
                     <div class="form-group modal-form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="vehiclePurpose">车辆用途 <span class="required">*</span></label>
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="purchaseDate">购入日期 <span class="required">*</span></label>
                         <div class="col-md-9 col-sm-9 col-xs-12">
-                            <select name="vehiclePurpose" id="vehiclePurpose" class="form-control col-md-7 col-xs-12">
-                                <option value="1">Option one</option>
-                                <option value="2">Option two</option>
-                                <option value="3">Option three</option>
-                                <option value="4">Option four</option>
-                            </select>
+                            <fieldset>
+                                <div class="xdisplay_inputx has-feedback">
+                                    <input type="text" name="purchaseDate" id="purchaseDate" class="form-control has-feedback-left col-md-7 col-xs-12" aria-describedby="inputSuccess">
+                                    <span class="fa fa-calendar-o form-control-feedback left" aria-hidden="true"></span>
+                                    <span id="inputSuccess" class="sr-only">(success)</span>
+                                </div>
+                            </fieldset>
                         </div>
                     </div>
-                    <div class="form-group modal-form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="archivesNo">档案编号 <span class="required">*</span></label>
-                        <div class="col-md-9 col-sm-9 col-xs-12">
-                            <input type="text" name="archivesNo" id="archivesNo" class="form-control col-md-7 col-xs-12">
-                        </div>
-                    </div>
-                    <p class="input-error"></p>
+                    <input type="hidden" name="archivesNo">
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal"><i class="glyphicon glyphicon-remove"></i>关闭</button>
                         <button type="button" class="btn btn-primary" onclick="add()"><i class="glyphicon glyphicon-ok"></i>提交</button>
@@ -113,13 +111,21 @@
         });
     }
 
+    $('input[name="purchaseDate"]').daterangepicker({
+        singleDatePicker: true,
+        showDropdowns: true,
+        locale: {
+            format: 'YYYY-MM-DD'
+        }
+    });
+
     var dt = $('#datatable-vehicle').DataTable($.extend({}, defaultDataTablesOption, {
         "ajax": {
             "url": contentPath + "/data/vehicleInfo", //从一个ajax数据源读取数据给表格内容
             "dataSrc": "" //数据属性或操作表数据的方法
         },
         "columns": [{
-            "data": "registration_plate",
+            "data": "registrationPlate",
             "orderable": true, // 启用排序
             "defaultContent": "",
             "width": "10%"
@@ -134,17 +140,17 @@
             "defaultContent": "",
             "width": "10%"
         }, {
-            "data": "vehicleType",
+            "data": "purchaseDept",
             "orderable": true, // 启用排序
             "defaultContent": "",
             "width": "10%"
         }, {
-            "data": "vehiclePurpose",
+            "data": "purchasePrice",
             "orderable": true, // 启用排序
             "defaultContent": "",
             "width": "10%"
         }, {
-            "data": "archivesNo",
+            "data": "purchaseDate",
             "orderable": true, // 启用排序
             "defaultContent": "",
             "width": "10%"
