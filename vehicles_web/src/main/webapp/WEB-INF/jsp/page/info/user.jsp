@@ -80,6 +80,13 @@
                         text: '用户录入成功！',
                         type: 'success',
                         styling: 'bootstrap3'
+                    });
+                } else {
+                    new PNotify({
+                        title: 'error',
+                        text: result,
+                        type: 'error',
+                        styling: 'bootstrap3'
                     })
                 }
             }
@@ -91,9 +98,10 @@
     }
 
     function del() {
-
+        dt.row('.selected').remove().draw( false );
     }
-    var dt = $('#datatable-user').DataTable($.extend({}, defaultDataTablesOption, {
+    var $datatableUser = $('#datatable-user');
+        var dt = $datatableUser.DataTable($.extend({}, defaultDataTablesOption, {
         "ajax": {
             "url": contentPath + "/data/userInfo", //从一个ajax数据源读取数据给表格内容
             "dataSrc": "" //数据属性或操作表数据的方法
@@ -121,5 +129,15 @@
         }]
     }));
     dt.draw(false);
+
+    $datatableUser.find('tbody').on( 'click', 'tr', function () {
+        if ( $(this).hasClass('selected') ) {
+            $(this).removeClass('selected');
+        }
+        else {
+            dt.$('tr.selected').removeClass('selected');
+            $(this).addClass('selected');
+        }
+    } );
 
 </script>

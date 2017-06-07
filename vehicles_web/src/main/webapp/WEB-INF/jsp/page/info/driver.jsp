@@ -145,7 +145,8 @@
         }
     });
 
-    var dt = $('#datatable-driver').DataTable($.extend({}, defaultDataTablesOption, {
+    var $datatableDriver = $('#datatable-driver');
+    var dt = $datatableDriver.DataTable($.extend({}, defaultDataTablesOption, {
         "ajax": {
             "url": contentPath + "/data/driverInfo", //从一个ajax数据源读取数据给表格内容
             "dataSrc": "" //数据属性或操作表数据的方法
@@ -188,5 +189,15 @@
         }]
     }));
     dt.draw(false);
+
+    $datatableDriver.find('tbody').on( 'click', 'tr', function () {
+        if ( $(this).hasClass('selected') ) {
+            $(this).removeClass('selected');
+        }
+        else {
+            dt.$('tr.selected').removeClass('selected');
+            $(this).addClass('selected');
+        }
+    } );
 
 </script>

@@ -127,7 +127,8 @@
         }
     });
 
-    var dt = $('#datatable-vehicle').DataTable($.extend({}, defaultDataTablesOption, {
+    var $datatableVehicle = $('#datatable-vehicle')
+    var dt = $datatableVehicle.DataTable($.extend({}, defaultDataTablesOption, {
         "ajax": {
             "url": contentPath + "/data/vehicleInfo", //从一个ajax数据源读取数据给表格内容
             "dataSrc": "" //数据属性或操作表数据的方法
@@ -165,4 +166,14 @@
         }]
     }));
     dt.draw(false);
+
+    $datatableVehicle.find('tbody').on( 'click', 'tr', function () {
+        if ( $(this).hasClass('selected') ) {
+            $(this).removeClass('selected');
+        }
+        else {
+            dt.$('tr.selected').removeClass('selected');
+            $(this).addClass('selected');
+        }
+    } );
 </script>

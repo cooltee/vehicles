@@ -20,6 +20,7 @@
 <link rel="stylesheet" href="${pageContext.request.contextPath}/statics/pnotify/pnotify.custom.min.css">
 
 <!-- DataTables -->
+<link href="${pageContext.request.contextPath}/statics/jquery/plugin/dataTables/jquery.dataTables.min.css" rel="stylesheet">
 <link href="${pageContext.request.contextPath}/statics/jquery/plugin/dataTables/dataTables.bootstrap.min.css" rel="stylesheet">
 <link href="${pageContext.request.contextPath}/statics/jquery/plugin/dataTables/buttons/buttons.bootstrap.min.css" rel="stylesheet">
 <link href="${pageContext.request.contextPath}/statics/jquery/plugin/dataTables/fixedHeader/fixedHeader.bootstrap.min.css" rel="stylesheet">
