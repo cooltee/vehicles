@@ -105,7 +105,15 @@
                         text: '车辆录入成功！',
                         type: 'success',
                         styling: 'bootstrap3'
-                    })
+                    });
+                    dt.ajax.reload();
+                } else {
+                    new PNotify({
+                        title: 'error',
+                        text: result,
+                        type: 'error',
+                        styling: 'bootstrap3'
+                    });
                 }
             }
         });

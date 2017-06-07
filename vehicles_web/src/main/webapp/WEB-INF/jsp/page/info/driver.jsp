@@ -6,7 +6,7 @@
 </div>
 
 <div class="function">
-    <button type="button" class="btn" data-toggle="modal" data-target=".modal-addUser">
+    <button type="button" class="btn" data-toggle="modal" data-target=".modal-addDriver">
         <i class="glyphicon glyphicon-plus"></i>新增</button>
     <button type="button" class="btn" onclick="edit()"><i class="glyphicon glyphicon-pencil"></i>修改</button>
     <button type="button" class="btn" onclick="del()"><i class="glyphicon glyphicon-minus"></i>删除</button>
@@ -110,7 +110,7 @@
             type: "POST",
             success: function (result) {
                 if (result === "success") {
-                    $('.modal-addUser').modal('hide');
+                    $('.modal-addDriver').modal('hide');
                     new PNotify({
                         title: 'success',
                         text: '用户录入成功！',
